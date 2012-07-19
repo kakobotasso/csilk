@@ -1,0 +1,8 @@
+module ProdutosHelper
+  def fotos(prod)
+    ft = "<h4>Fotos</h4>"
+    ft << "<div id='fotos'>"
+    if prod
+    ft << "</div>"
+  end
+end

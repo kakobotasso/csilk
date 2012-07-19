@@ -1,0 +1,24 @@
+<h1>Lista de newsletters</h1>
+
+<table>
+  <tr>
+    <th>Nome</th>
+    <th>Email</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @newsletters.each do |newsletter| %>
+  <tr>
+    <td><%= newsletter.nome %></td>
+    <td><%= newsletter.email %></td>
+    <td><%= link_to 'Mostrar', [:admin, newsletter] %></td>
+    <td><%= link_to 'Deletar', [:admin, newsletter], confirm: 'Tem certeza que deseja excluir este assinante?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Novo Newsletter', new_admin_newsletter_path %>

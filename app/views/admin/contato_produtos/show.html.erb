@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nome:</b>
+  <%= @contato_produto.nome %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @contato_produto.email %>
+</p>
+
+<p>
+  <b>Telefone:</b>
+  <%= @contato_produto.telefone %>
+</p>
+
+<p>
+  <b>Assunto:</b>
+  <%= @contato_produto.assunto %>
+</p>
+
+<p>
+  <b>Mensagem:</b>
+  <%= @contato_produto.mensagem %>
+</p>
+
+<p>
+  <b>Produto:</b>
+  <%= @contato_produto.produto %>
+</p>
+
+
+<%= link_to 'Voltar', admin_contato_produtos_path %>

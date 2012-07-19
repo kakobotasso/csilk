@@ -1,0 +1,25 @@
+class ProdutosController < ApplicationController
+  before_filter :authenticate_user!
+
+  # GET /produtos
+  # GET /produtos.json
+  def index
+    @produtos = Produto.all
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @produtos }
+    end
+  end
+
+  # GET /produtos/1
+  # GET /produtos/1.json
+  def show
+    @produto = Produto.find(params[:id])
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @produto }
+    end
+  end
+end

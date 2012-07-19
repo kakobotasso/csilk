@@ -1,0 +1,89 @@
+*{ margin:0px; padding:0px; border:0px; }
+ul, ul li{
+	list-style-type:none;
+}
+
+#wrapperAdmin{
+	width:990px;
+	margin:0 auto;
+}
+
+input{
+	border: 1px solid #999;
+}
+
+/* LOGO */
+#logoAdmin{
+	width:100%;
+	float:left;
+	text-align: center;
+	padding:10px 0px 10px 0px;
+}
+
+/* TELA LOGIN */
+#guardaTelaLogin{
+	float: left;
+	width:100%;
+	padding:70px 0px;
+}
+
+#guardaTelaLogin #telaLogin{
+	width:260px;
+	margin:0px auto;
+}
+
+/* MENU */
+#menuAdmin{
+	float: left;
+	width:100%;
+	padding:0px 0px 10px 0px;
+}
+#menuAdmin ul{
+	float: left;
+	width:100%;
+	background:#F0E68C;
+	border-top:2px solid #ccc;
+	border-bottom:2px solid #ccc;
+}
+
+#menuAdmin ul li{
+	float: left;
+	padding:0px 7px 0px 7px;
+}
+
+
+#menuAdmin ul li a{
+	float: left;
+	color:#191970;
+	padding:10px 8px 10px 8px;
+	font-weight:bold;
+}
+
+#menuAdmin ul li a:hover{
+	background:#191970;
+	text-decoration:none;
+	color:#FFD700;
+}
+
+/* CONTEUDO */
+#wrapperAdmin h1{
+	float: left;
+	width:100%;
+	padding:10px 0px;
+	font-weight:bold;
+	text-transform:uppercase;
+	color:#191970;
+}
+
+/* RODAPE */
+#rodapeAdmin{
+	float: left;
+	width:100%;
+	text-align:center;
+	background:#F0E68C;
+	border-top:2px solid #ccc;
+	border-bottom:2px solid #ccc;
+	padding:10px 0px;
+	display:inline;
+	margin:30px 0px 0px 0px;
+}

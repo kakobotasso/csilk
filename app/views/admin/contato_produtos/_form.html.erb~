@@ -1,0 +1,41 @@
+<%= form_for [:admin, @contato_produto] do |f| %>
+  <% if @contato_produto.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@contato_produto.errors.count, "error") %> prohibited this contato_produto from being saved:</h2>
+
+      <ul>
+      <% @contato_produto.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nome %><br />
+    <%= f.text_field :nome %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :telefone %><br />
+    <%= f.text_field :telefone %>
+  </div>
+  <div class="field">
+    <%= f.label :assunto %><br />
+    <%= f.text_field :assunto, :value => "Contato para o produto #{@produto_id.nome}" %>
+  </div>
+  <div class="field">
+    <%= f.label :mensagem %><br />
+    <%= f.text_area :mensagem %>
+  </div>
+  <div class="field">
+    <%= f.label :produto %><br />
+    <%= f.hidden_field :produto_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

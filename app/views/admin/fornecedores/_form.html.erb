@@ -1,0 +1,61 @@
+<%= form_for [:admin, @fornecedor] do |f| %>
+  <% if @fornecedor.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@fornecedor.errors.count, "error") %> prohibited this fornecedor from being saved:</h2>
+
+      <ul>
+      <% @fornecedor.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :razao_social %><br />
+    <%= f.text_field :razao_social %>
+  </div>
+  <div class="field">
+    <%= f.label :nome_fantasia %><br />
+    <%= f.text_field :nome_fantasia %>
+  </div>
+  <div class="field">
+    <%= f.label :cnpj %><br />
+    <%= f.text_field :cnpj %>
+  </div>
+  <div class="field">
+    <%= f.label :nome_contato %><br />
+    <%= f.text_field :nome_contato %>
+  </div>
+  <div class="field">
+    <%= f.label :telefone %><br />
+    <%= f.text_field :telefone %>
+  </div>
+  <div class="field">
+    <%= f.label :celular %><br />
+    <%= f.text_field :celular %>
+  </div>
+  <div class="field">
+    <%= f.label :fax %><br />
+    <%= f.text_field :fax %>
+  </div>
+  <div class="field">
+    <%= f.label :site %><br />
+    <%= f.text_field :site %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :cidade %><br />
+    <%= f.text_field :cidade %>
+  </div>
+  <div class="field">
+    <%= f.label :estado %><br />
+    <%= f.text_field :estado %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

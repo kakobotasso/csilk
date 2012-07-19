@@ -1,0 +1,6 @@
+<h1>Editing produto</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Mostrar', [:admin, @produto] %> |
+<%= link_to 'Voltar', admin_produtos_path %>

@@ -1,0 +1,27 @@
+<h1>Lista de banners</h1>
+
+<table>
+  <tr>
+    <th>Nome</th>
+    <th>Link</th>
+    <th>Data publicação</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @banners.each do |banner| %>
+  <tr>
+    <td><%= banner.nome %></td>
+    <td><%= banner.link %></td>
+    <td><%= banner.data_pub %></td>
+    <td><%= link_to 'Mostrar', [:admin, banner] %></td>
+    <td><%= link_to 'Editar', edit_admin_banner_path(banner) %></td>
+    <td><%= link_to 'Deletar', [:admin, banner], confirm: 'Tem certeza que deseja deletar este banner?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Novo Banner', new_admin_banner_path %>

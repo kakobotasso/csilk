@@ -1,0 +1,31 @@
+<h1>Lista de Contatos por Produto</h1>
+
+<table>
+  <tr>
+    <th>Nome</th>
+    <th>Email</th>
+    <th>Telefone</th>
+    <th>Assunto</th>
+    <th>Mensagem</th>
+    <th>Produto</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @contato_produtos.each do |contato_produto| %>
+  <tr>
+    <td><%= contato_produto.nome %></td>
+    <td><%= contato_produto.email %></td>
+    <td><%= contato_produto.telefone %></td>
+    <td><%= contato_produto.assunto %></td>
+    <td><%= contato_produto.mensagem %></td>
+    <td><%= contato_produto.produto %></td>
+    <td><%= link_to 'Mostrar', [:admin, contato_produto] %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Novo contato',  new_admin_contato_produto %>

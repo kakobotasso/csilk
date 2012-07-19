@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin CSilk Brindes</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "admin" %>
+  <%= csrf_meta_tags %>
+  <meta name="robots" content="noindex, nofollow">
+<script type="text/javascript" src="/assets/ckeditor.js"></script>
+</head>
+<body>
+<% if user_signed_in? %>
+<ul>
+  <li><%= link_to "Produtos", admin_produtos_path %></li>
+  <li><%= link_to "Banners", admin_banners_path %></li>
+  <li><%= link_to "Categorias", admin_categorias_path %></li>
+  <li><%= link_to "Inscritos para newsletter", admin_newsletters_path %></li>
+  <li><%= link_to "Contatos - Fale Conosco", admin_contatos_path %></li>
+  <li><%= link_to "Contatos - Produto", admin_contato_produtos_path %></li>
+  <li><%= link_to "Candidatos a fornecedor", admin_fornecedores_path %></li>
+  <li><%= link_to "Sair", destroy_user_session_path, :method => :delete %></li>
+</ul>
+<% end %>
+
+<%= yield %>
+
+  <script type="text/javascript">
+    <%= yield :js %>
+  </script>
+</body>
+</html>
+

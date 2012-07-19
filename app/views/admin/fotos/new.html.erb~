@@ -1,0 +1,6 @@
+<h1>Nova foto</h1>
+
+<%= render 'form' %>
+
+<%= @produto_id %>
+<%= link_to 'Voltar', admin_produtos_path+"/"+@produto_id %>

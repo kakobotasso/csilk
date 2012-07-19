@@ -1,0 +1,63 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Número:</b>
+  <%= @produto.id %>
+</p>
+
+<p>
+  <b>Nome:</b>
+  <%= @produto.nome %>
+</p>
+
+<p>
+  <b>Slug:</b>
+  <%= @produto.slug %>
+</p>
+
+<p>
+  <b>Descricao:</b>
+  <%= @produto.descricao %>
+</p>
+
+<p>
+  <b>Número de visitas:</b>
+  <%= @produto.nvisitas %>
+</p>
+
+<p>
+  <b>Número de contatos:</b>
+  <%= @produto.ncontatos %>
+</p>
+
+<p>
+  <b>Categoria:</b>
+  <%= @produto.categoria.nome %>
+</p>
+
+<p>
+  <b>Categoria:</b>
+  <%= @produto.keywords %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @produto.description %>
+</p>
+
+<p>
+  <b>Fotos:</b>
+</p>
+<ul>
+  <% @produto.fotos.each do |u| %>
+    <li>
+      <%= image_tag u.picture.url(:medio)%>
+      <%= link_to 'Editar', edit_admin_foto_path(u) %>
+      <%= link_to 'Deletar', [:admin, u], confirm: 'Tem certeza que deseja excluir esta foto?', method: :delete %>
+    </li>
+  <% end %>
+</ul>
+<%= link_to 'Nova foto', new_admin_foto_path(:produto_id => @produto.id) %>
+
+<%= link_to 'Editar', edit_admin_produto_path(@produto) %> |
+<%= link_to 'Voltar', admin_produtos_path %>
