@@ -11,10 +11,6 @@ end
 
 module Csilk
   class Application < Rails::Application
-    # Settings in config/environments/* take precedence over those specified here.
-    # Application configuration should go into files in config/initializers
-    # -- all .rb files in that directory are automatically loaded.
-
     # Custom directories with classes and modules you want to be autoloadable.
     # config.autoload_paths += %W(#{config.root}/extras)
 
@@ -51,7 +47,7 @@ module Csilk
     # config.active_record.whitelist_attributes = true
 
     # Enable the asset pipeline
-    config.assets.enabled = true
+    config.assets.enabled = false
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
