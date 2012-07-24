@@ -54,6 +54,8 @@ Csilk::Application.configure do
     config.assets.precompile += %w( file )
   end
 
+  config.assets.precompile += %w( admin.js )
+
   Dir[Rails.root.join("app/assets/stylesheets/*.css")].each do |file|
     config.assets.precompile += %w( file )
   end
