@@ -75,6 +75,50 @@ input{
 	color:#191970;
 }
 
+#guardaListagens{
+	float:left;
+	width:100%;
+}
+
+#guardaListagens table{
+	width:990px;
+	float:left;
+	border:1px solid #B0C4DE;
+}
+
+#guardaListagens table tr{
+	float:left;
+	width:990px;
+	border-bottom:1px solid #B0C4DE;
+}
+
+#guardaListagens table tr.ultimaTr{
+	border-bottom:0px;
+}
+
+#guardaListagens table tr#firstTr{
+	background:#B0C4DE;
+}
+
+#guardaListagens .deletar{ color:#f00; }
+
+#guardaListagens #novoItem{
+	float:left;
+	padding:5px 10px;
+	display:inline;
+	margin:10px 0px 0px 0px;
+	background:#006400;
+	color:#fff;
+}
+
+#guardaListagens table th,
+#guardaListagens table td{
+	float:left;
+	width:20%;
+	padding:3px 0px;
+	text-align:center;
+}
+
 /* RODAPE */
 #rodapeAdmin{
 	float: left;
