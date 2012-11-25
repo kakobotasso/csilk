@@ -1,0 +1,49 @@
+<% content_for :title do %> <%= "#{@produto.nome} - CSilkBrindes" %> <% end %>
+<% content_for :metadescription do %> <%= @produto.description %> <% end %>
+<% content_for :metakeywords do %> <%= @produto.keywords %> <% end %>
+
+<% content_for :bread do %>
+	<%= link_to "Ínicio", "/" %> > 
+	<%= link_to @produto.categoria.nome, "/#{@produto.categoria.slug}" %> >
+	<%= @produto.nome %>
+<% end %>
+
+<div id="direitaProdutos">
+  <div id="guardaDetalheProduto">
+      <!-- FOTOS -->
+      <div id="guardaFotosProduto">
+          <div id="fotoPrincipal">
+          </div>
+          
+          <div id="guardaMiniaturas">
+              <a href="javascript:void(0);" class="setas" id="setaEsq"> < </a>
+              <a href="javascript:void(0);" class="setas" id="setaDir"> > </a>
+              <div id="miniaturas">
+                  <ul>
+                  	<% @produto.fotos.each do |u| %>
+				    <li>
+				      <%= image_tag u.picture.url(:medio)%>
+				    </li>
+				  	<% end %>
+                      
+                  </ul>
+              </div>
+          </div>
+      </div>
+      <!-- / FOTOS -->
+      
+      <!-- LADO DIREITO -->
+      <div id="ladoDireitoProduto">
+      </div>
+      <!-- / LADO DIREITO -->
+      
+      <!-- DESCRICAO PRODUTO -->
+      <div id="guardaDescricaoProduto">
+          <p id="tituloDescricaoProduto">Descrição do Produto</p>
+          <div id="descricaoProduto">
+          	<%= @produto.descricao.html_safe %>
+          </div>
+      </div>
+      <!-- / DESCRICAO PRODUTO -->
+  </div>
+</div>

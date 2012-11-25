@@ -11,3 +11,600 @@
  *= require_self
  *= require_tree .
 */
+/*
+    AUTOR: Kako Botasso
+*/
+
+/* ESTRUTURA */
+*{
+    margin:0px;
+    padding:0px;
+    border:0px;
+}
+
+ul, ul li{ list-style:none; list-style-type:none; }
+
+body{
+    background:url('pixel-bg-topo.gif') repeat-x 0px 0px;
+}
+
+.wrapper{
+    width:996px;
+    margin:0 auto;
+}
+
+#contentWrapper{
+    width:930px;
+    margin:0 auto;
+}
+
+/* TOPO */
+#header{
+    float:left;
+    width:100%;
+}
+
+#header #guardaLogo{
+    float:left;
+}
+
+#header #redesSociais{
+    float:right;
+}
+
+#header #redesSociais ul{ float:left; }
+#header #redesSociais ul li{ float:left; }
+
+#header #menu{
+    float:left;
+    width:100%;
+    background:url('bg-barra-menu.gif') repeat-x 0px 0px;
+    height:55px;
+    display:inline;
+    margin:18px 0px 0px 0px;
+}
+
+#header #menu ul{
+    width:840px;
+    margin:0 auto;
+}
+#header #menu ul li{
+    float:left;
+    padding:4px 8px 0px 0px;
+}
+
+#header #menu ul li.ultimaLiTopo{ padding-right:0px; }
+
+#header #menu ul li a{
+    float:left;
+    width:161px;
+    height:46px;
+    background:url('menu-superior.png') no-repeat 0px 0px;
+}
+#header #menu ul li a#quem-somos{ background-position:0px 0px; }
+#header #menu ul li a#o-que-fazemos{ background-position:-169px 0px; }
+#header #menu ul li a#produtos{ background-position:-337px 0px; }
+#header #menu ul li a#clientes{ background-position:-502px 0px; }
+#header #menu ul li a#contato{ background-position:-669px 0px; }
+/* CONTEUDO */
+#content{
+    float:left;
+    width:100%;
+}
+
+#content #guardaSlider{
+    float:left;
+    padding:7px 0px 0px 0px;
+    width:929px;
+    height:185px;
+    position:relative;
+}
+
+#content #guardaSlider #banners{
+    float:left;
+    width:929px;
+    height:185px;
+    position:relative;
+}
+
+#content #guardaSlider #banners a{
+    float:left;
+    position:absolute;
+    top:0px;
+    left:0px;
+    display:none;
+}
+
+#content #guardaSlider #paginacao{
+    float:left;
+    position:absolute;
+    bottom:0px;
+    right:10px;
+}
+
+#content #guardaSlider #paginacao ul{}
+#content #guardaSlider #paginacao ul li{
+    float:left;
+    padding:0px 5px 0px 0px
+}
+#content #guardaSlider #paginacao ul li a{
+    float:left;
+    width:24px;
+    text-align:center;
+    padding:2px 0px 2px 0px;
+    background:#C39A18;
+    text-decoration:none;
+    color:#fff;
+}
+
+#content #guardaSlider #paginacao ul li a.marcado,
+#content #guardaSlider #paginacao ul li a:hover{
+    border-top:1px solid #C39A18;
+    border-left:1px solid #C39A18;
+    border-right:1px solid #C39A18;
+    background:#fff;
+    color:#C39A18;
+    padding:1px 0px 1px 0px;
+    width:22px;
+}
+
+#content #guardaProdutosVendidos,
+#content #guardaProdutosDestaques{
+    float:left;
+    width:100%;
+    padding-top:27px;
+}
+
+#content #guardaProdutosVendidos{ padding-top:16px; }
+
+#content .tituloDestaque{
+    float:left;
+    width:100%;
+    text-align:center;
+    background:url('topo-destaques.gif') no-repeat center 0px;
+    padding:4px 0px 4px 0px;
+    color:#967e00;
+    text-transform:uppercase;
+    font-size:19px;
+}
+
+#content #guardaProdutosVendidos #geralProdutosVendidos,
+#content #guardaProdutosDestaques #geralProdutosDestaques{
+    float:left;
+    width:927px;
+    height:326px;
+    background:url('bg-destaques-maior.gif') no-repeat 0px 0px;
+    position: relative;
+}
+
+#content #guardaProdutosVendidos #geralProdutosVendidos{
+    height:142px;
+    background:url('bg-destaques-menor.gif') no-repeat 0px 0px;
+}
+
+#content #guardaProdutosVendidos #geralProdutosVendidos a.setas,
+#content #guardaProdutosDestaques #geralProdutosDestaques a.setas{
+    float:left;
+    position:absolute;
+    top:93px;
+}
+
+#content #guardaProdutosVendidos #geralProdutosVendidos a.setas{ top:53px; }
+
+#content #guardaProdutosVendidos #geralProdutosVendidos a#setaEsquerdaVendidos,
+#content #guardaProdutosDestaques #geralProdutosDestaques a#setaEsquerda{ left:20px }
+
+#content #guardaProdutosVendidos #geralProdutosVendidos a#setaDireitaVendidos,
+#content #guardaProdutosDestaques #geralProdutosDestaques a#setaDireita{ right:20px; }
+
+#content #guardaProdutosVendidos #geralProdutosVendidos #produtosVendidos,
+#content #guardaProdutosDestaques #geralProdutosDestaques #produtosDestaque{
+    float:left;
+    width:741px;
+    height:225px;
+    padding:25px 0px 0px 90px;
+    overflow:hidden;
+    position:relative;
+}
+#content #guardaProdutosVendidos #geralProdutosVendidos #produtosVendidos ul,
+#content #guardaProdutosDestaques #geralProdutosDestaques #produtosDestaque ul{
+    float:left;
+    width:760px;
+    position:relative;
+    left:0px;
+}
+#content #guardaProdutosVendidos #geralProdutosVendidos #produtosVendidos ul li,
+#content #guardaProdutosDestaques #geralProdutosDestaques #produtosDestaque ul li{
+    float:left;
+    width:233px;
+    padding:0px 19px 0px 0px;
+}
+#content #guardaProdutosVendidos #geralProdutosVendidos #produtosVendidos ul li .sliderProdutoVendidos,
+#content #guardaProdutosDestaques #geralProdutosDestaques #produtosDestaque ul li .sliderProdutoDestaque{
+    float:left;
+    width:233px;
+    height:103px;
+    padding:0px 0px 13px 0px;
+}
+#content #guardaProdutosVendidos #geralProdutosVendidos #produtosVendidos ul li .sliderProdutoVendidos .guardaImagem,
+#content #guardaProdutosDestaques #geralProdutosDestaques #produtosDestaque ul li .sliderProdutoDestaque .guardaImagem{
+    float:left;
+    width:116px;
+    height:103px;
+    background:#C68700;
+}
+#content #guardaProdutosVendidos #geralProdutosVendidos #produtosVendidos ul li .sliderProdutoVendidos .nomeProduto,
+#content #guardaProdutosDestaques #geralProdutosDestaques #produtosDestaque ul li .sliderProdutoDestaque .nomeProduto{
+    float:left;
+    padding:10px 0px 0px 13px;
+}
+#content #guardaProdutosVendidos #geralProdutosVendidos #produtosVendidos ul li .sliderProdutoVendidos .nomeProduto a,
+#content #guardaProdutosVendidos #geralProdutosVendidos #produtosVendidos ul li .sliderProdutoVendidos .nomeProduto p a,
+#content #guardaProdutosVendidos #geralProdutosVendidos #produtosVendidos ul li .sliderProdutoVendidos .nomeProduto p,
+#content #guardaProdutosDestaques #geralProdutosDestaques #produtosDestaque ul li .sliderProdutoDestaque .nomeProduto a,
+#content #guardaProdutosDestaques #geralProdutosDestaques #produtosDestaque ul li .sliderProdutoDestaque .nomeProduto p a,
+#content #guardaProdutosDestaques #geralProdutosDestaques #produtosDestaque ul li .sliderProdutoDestaque .nomeProduto p{
+    color:#372600;
+    text-decoration:none;
+    float:left;
+    height:55px;
+    overflow:hidden;
+    font-size:18px;
+    font-family:Arial;
+}
+#content #guardaProdutosVendidos #geralProdutosVendidos #produtosVendidos ul li .sliderProdutoVendidos .saibaMais,
+#content #guardaProdutosDestaques #geralProdutosDestaques #produtosDestaque ul li .sliderProdutoDestaque .saibaMais{
+    float:left;
+    padding:5px 0px 0px 9px;
+}
+
+.guardaPaginacaoSlider{
+    float:left;
+    width:100%;
+    height:28px;
+    text-align:center;
+    padding:35px 0px 0px 0px;
+}
+
+.guardaPaginacaoSlider a{
+    width:28px;
+    height:28px;
+    display:inline-block;
+    margin:0px 5px 0px 5px;
+    background:url('sprite-botoes-destaques.png') no-repeat -39px -1px;
+}
+.guardaPaginacaoSlider a.marcado,
+.guardaPaginacaoSlider a:hover{ background-position:-1px -1px; }
+
+#guardaNewsletter{
+    float:left;
+    width:100%;
+    height:42px;
+    background:#dfdfdf;
+    padding:2px 0px;
+    display:inline;
+    margin:5px 0px 0px 0px;
+}
+
+#guardaNewsletter #novidadesNews{
+    float:left;
+    padding:6px 0px 0px 10px;
+}
+
+#guardaNewsletter #novidadesNews p{
+    float:left;
+    line-height:90%;
+}
+
+#guardaNewsletter #guardaFormNewsletter{
+    float:right;
+    padding:0px 15px 0px 0px;
+}
+
+#guardaNewsletter #guardaFormNewsletter input{
+    float:left;
+    padding:3px 3px;
+    display:inline;
+    margin:10px 0px 0px 15px;
+    border:1px solid #8b8b8b;
+}
+
+#guardaNewsletter #guardaFormNewsletter a{
+    float:left;
+    display:inline;
+    margin:4px 0px 0px 15px;
+}
+
+/* RODAPE */
+#footer{
+    float:left;
+    width:100%;
+    height:228px;
+    display:inline;
+    margin:10px 0px 0px 0px;
+    background:url("pixel-rodape.gif") repeat-x 0px 0px;
+}
+ 
+#footer #direitosReservados{
+    float:left;
+    width:100%;
+    text-align:center;
+}
+ 
+#footer #contentRodape{
+    float:left;
+    width:100%;
+}
+
+#footer #contentRodape #esquerdaRodape{
+    float:left;
+    width:150px;
+    padding:15px 0px 0px 50px;
+}
+
+#footer #contentRodape #esquerdaRodape a{
+    float:left;
+    text-decoration:none;
+    color:#000;
+}
+
+#footer #contentRodape #esquerdaRodape ul{
+    float:left;
+    width:100%;
+    padding:10px 0px 0px 0px;
+}
+
+#footer #contentRodape #esquerdaRodape ul li{
+    float:left;
+    width:100%;
+}
+
+#footer #contentRodape #categoriasRodape{
+    float:left;
+    width:695px;
+    padding:30px 0px 0px 5px;
+}
+
+#footer #contentRodape #categoriasRodape ul{
+    float:left;
+    width:100%;
+}
+
+#footer #contentRodape #categoriasRodape ul li{
+    float:left;
+    width:25%;
+}
+
+/* CATEGORIA */
+#breadcrumb{
+    float:left;
+    width:100%;
+    padding:10px 0px;
+}
+
+#guardaMenuCategoria{
+    float:left;
+    width:272px;
+    padding:0px 0px 50px 0px;
+}
+
+#guardaMenuCategoria ul{
+    float:left;
+    width:270px;
+    background:#d5d5d5;
+    border:1px solid #868688;
+}
+
+#guardaMenuCategoria ul li{
+    float:left;
+    width:100%;
+}
+
+#guardaMenuCategoria ul li a{
+    float:left;
+    width:260px;
+    color:#7F5A01;
+    padding:2px 5px;
+    text-decoration:none;
+}
+
+#guardaMenuCategoria ul li a.marcado,
+#guardaMenuCategoria ul li a:hover{
+    color:#fff;
+    background:#CFA900;
+}
+
+#guardaMenuCategoria ul li ul{
+    display:none;
+    border:0px;
+}
+
+#guardaMenuCategoria ul li ul li a{
+    float:left;
+    width:230px;
+    color:#7F5A01;
+    padding:2px 20px;
+    text-decoration:none;
+}
+
+#guardaMenuCategoria ul li ul li a.marcado,
+#guardaMenuCategoria ul li ul li a:hover{
+    color:#fff;
+    background:#EEC400;
+}
+
+#direitaProdutos{
+    float:left;
+    padding:0px 0px 0px 15px;
+}
+
+#direitaProdutos #produtosCategoria{
+    float:left;
+}
+
+#direitaProdutos #produtosCategoria ul{
+    float:left;
+    width:635px;
+    padding:0px 0px 20px 0px;
+}
+
+#direitaProdutos #produtosCategoria ul li{
+    float:left;
+    width:183px;
+    background:#adadad;
+    border:1px solid #464646;
+    padding:10px 10px 10px 10px;
+    display:inline;
+    margin:0px 10px 10px 0px;
+}
+
+#direitaProdutos #produtosCategoria ul li.terceira{ margin-right:0px; }
+
+#direitaProdutos #produtosCategoria ul li .guardaImagemProduto{
+    float:left;
+    width:182px;
+    height:138px;
+    padding:0px 0px 6px 0px;
+}
+
+#direitaProdutos #produtosCategoria ul li .guardaImagemProduto a{
+    float:left;
+    width:182px;
+    height:138px;
+    overflow:hidden;
+    background:#fff;
+}
+
+#direitaProdutos #produtosCategoria ul li .guardaInfosProduto{
+    float:left;
+    width:182px;
+}
+
+#direitaProdutos #produtosCategoria ul li .guardaInfosProduto .nomeProduto{
+    float:left;
+    color:#9b730b;
+    text-decoration:none;
+    font-family:Arial;
+    font-size:14px;
+    width:100%;
+}
+
+#direitaProdutos #produtosCategoria ul li .guardaInfosProduto .descProduto{
+    float:left;
+    color:#fff;
+    text-decoration:none;
+    font-family:Arial;
+    font-size:14px;
+    width:100%;
+}
+
+/* DETALHE PRODUTO */
+#direitaProdutos #guardaDetalheProduto{
+    float:left;
+    width:630px;
+    padding:0px 0px 20px 0px;
+}
+
+#direitaProdutos #guardaDetalheProduto #guardaFotosProduto{
+    float:left;
+    width:315px;
+}
+
+#direitaProdutos #guardaDetalheProduto #guardaFotosProduto #fotoPrincipal{
+    float:left;
+    width:315px;
+    height:315px;
+    background:#868688;
+}
+
+#direitaProdutos #guardaDetalheProduto #guardaFotosProduto #guardaMiniaturas{
+    float:left;
+    width:315px;
+    position:relative;
+    padding:13px 0px 0px 0px;
+}
+
+#direitaProdutos #guardaDetalheProduto #guardaFotosProduto #guardaMiniaturas .setas{
+    width:23px;
+    height:55px;
+}
+
+#direitaProdutos #guardaDetalheProduto #guardaFotosProduto #guardaMiniaturas .setas#setaEsq{ float:left; }
+
+#direitaProdutos #guardaDetalheProduto #guardaFotosProduto #guardaMiniaturas .setas#setaDir{ float:right; }
+
+#direitaProdutos #guardaDetalheProduto #guardaFotosProduto #guardaMiniaturas #miniaturas{
+    float:left;
+    width:236px;
+    height:52px;
+    position:relative;
+    overflow:hidden;
+    display:inline;
+    margin:0px 0px 0px 15px;
+}
+
+#direitaProdutos #guardaDetalheProduto #guardaFotosProduto #guardaMiniaturas #miniaturas ul{
+    float:left;
+    width:2340px;
+    height:52px;
+    position:relative;
+    left:0px;
+}
+
+#direitaProdutos #guardaDetalheProduto #guardaFotosProduto #guardaMiniaturas #miniaturas ul li{
+    float:left;
+    width:52px;
+    height:52px;
+    padding:0px 7px 0px 0px;
+}
+
+#direitaProdutos #guardaDetalheProduto #guardaFotosProduto #guardaMiniaturas #miniaturas ul li a{
+    float:left;
+    width:52px;
+    height:52px;
+    background:#868688;
+}
+
+#direitaProdutos #guardaDetalheProduto #ladoDireitoProduto{
+    float:left;
+    width:285px;
+    height:402px;
+    background:#e7e7e7;
+    display:inline;
+    margin:0px 0px 0px 25px;
+}
+
+#direitaProdutos #guardaDetalheProduto #guardaDescricaoProduto{
+    float:left;
+    width:620px;
+    border:2px solid #e8c400;
+    display:inline;
+    margin:25px 0px 0px 0px;
+    padding:0px 0px 20px 0px;
+}
+
+#direitaProdutos #guardaDetalheProduto #guardaDescricaoProduto #tituloDescricaoProduto{
+    float:left;
+    width:610px;
+    background:#e8c400;
+    padding:10px 0px 10px 10px;
+    font-family:Arial;
+    font-weight:bold;
+    font-size:20px;
+}
+
+#direitaProdutos #guardaDetalheProduto #guardaDescricaoProduto #descricaoProduto{
+    float:left;
+    width:584px;
+    padding:18px 18px 0px 18px;
+    font-family:Arial;
+    font-size:18px;
+}
+
+#direitaProdutos #guardaDetalheProduto #guardaDescricaoProduto #descricaoProduto p{
+    float:left;
+    width:100%;
+    font-family:Arial;
+    font-size:18px;
+    padding:0px 0px 10px 0px;
+}

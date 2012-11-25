@@ -22,6 +22,7 @@ Csilk::Application.routes.draw do
     }
   end
 
+  get '/produtos/:slug' => 'produtos#index'
 
   namespace :admin do
     # colocar todos os resources aqui
@@ -35,8 +36,7 @@ Csilk::Application.routes.draw do
     resources :contato_produtos
   end
 
-  get '/produtos/' => "produtos#index"
-  get '/produtos/:slug' => 'produtos#show'
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
