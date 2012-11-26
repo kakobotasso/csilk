@@ -565,6 +565,12 @@ body{
     background:#868688;
 }
 
+#direitaProdutos #guardaDetalheProduto #guardaFotosProduto #guardaMiniaturas #miniaturas ul li a img{
+    float:left;
+    width:52px;
+    height:52px;
+}
+
 #direitaProdutos #guardaDetalheProduto #ladoDireitoProduto{
     float:left;
     width:285px;

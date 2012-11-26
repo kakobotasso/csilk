@@ -13,6 +13,7 @@
       <!-- FOTOS -->
       <div id="guardaFotosProduto">
           <div id="fotoPrincipal">
+          	<img src="" alt="" />
           </div>
           
           <div id="guardaMiniaturas">
@@ -22,7 +23,7 @@
                   <ul>
                   	<% @produto.fotos.each do |u| %>
 				    <li>
-				      <%= image_tag u.picture.url(:medio)%>
+				      <%= link_to (image_tag u.picture.url(:menor)), "javascript:void(0);" %>
 				    </li>
 				  	<% end %>
                       
@@ -47,3 +48,64 @@
       <!-- / DESCRICAO PRODUTO -->
   </div>
 </div>
+
+<script type="text/javascript">
+  $(function(){
+      /* MENU LATERAL */
+      var url = location.pathname.split("/");
+
+      var categoria = "<%= @produto.categoria.slug %>"; // url[1]
+      var produto = url[2];//3
+      
+      $("#guardaMenuCategoria ul li#"+categoria+" a:eq(0)").addClass("marcado");
+      $("#guardaMenuCategoria ul li#"+categoria+" ul").slideDown(500);
+      $("#guardaMenuCategoria ul li#"+categoria+" a#"+produto).addClass("marcado");
+      /* / MENU LATERAL */
+      
+      /* CARROSSEL */
+      var _left = 0;
+      var _length = $("#miniaturas ul li").length;
+      var _li = $("#miniaturas ul li").outerWidth(true);
+      $("#miniaturas ul").css("width", (_length*_li));
+      
+      document.getElementById("setaEsq").direcao = 1;
+      document.getElementById("setaDir").direcao = -1;
+      
+      function validaSetas(){
+      	if( _length > 4 ){
+      		if( _left == 0 ){
+      			$("#setaEsq").hide();
+      			$("#setaDir").show();
+      		}else if( _left <= -( (_length*_li)-(_li*4) ) ){
+      			$("#setaEsq").show();
+      			$("#setaDir").hide();
+      		}else{
+      			$("#setaEsq").show();
+      			$("#setaDir").show();
+      		}
+      	}else{
+      		$("#setaEsq").hide();
+      		$("#setaDir").hide();
+      	}
+      }
+      validaSetas();
+
+      $(".setas").click(function(){
+          _left += this.direcao * (_li);
+          $("#miniaturas ul").animate({ left: _left}, 500);
+          validaSetas();
+      });
+
+      $("#miniaturas ul li a").click(function(){
+      	var _src = $(this).find('img').attr("src").replace("menor","medio");
+
+      	$("#fotoPrincipal img").fadeOut(500, function(){
+      		$("#fotoPrincipal img").attr("src", _src);
+      		$("#fotoPrincipal img").fadeIn(500);
+      	});
+      });
+
+      $("#miniaturas ul li a").eq(0).trigger("click");
+      /* / CARROSSEL */
+  });
+</script>

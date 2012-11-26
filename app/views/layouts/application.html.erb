@@ -64,7 +64,19 @@
               <!-- MENU CATEGORIAS -->
               <div id="guardaMenuCategoria">
                   <ul>
-                      <li id="categoria-a">
+                  	<% categorias.each do |c| %>
+                  	<li id="<%= c.slug %>">
+                  		<%= link_to c.nome, c.slug %>
+                  		<% if c.produtos.size > 0 %>
+                  		<ul>
+                  		  <% c.produtos.each do |p| %>
+                  		  <li><%= link_to p.nome, p.slug, :id => p.slug %></li>
+                  		  <% end %>
+                  		</ul>
+                  		<% end %>
+                  	</li>	
+                    <% end %>
+                      <!--<li id="categoria-a">
                           <a href="javascript:void(0);">Categoria 01</a>
                           <ul>
                               <li><a href="javascript:void(0);" id="produto-01">Produto 01</a></li>
@@ -73,47 +85,7 @@
                               <li><a href="javascript:void(0);">Produto 04</a></li>
                               <li><a href="javascript:void(0);">Produto 05</a></li>
                           </ul>
-                      </li>
-                      <li>
-                          <a href="javascript:void(0);">Categoria 02</a>
-                          <ul>
-                              <li><a href="javascript:void(0);">Produto 01</a></li>
-                              <li><a href="javascript:void(0);">Produto 02</a></li>
-                              <li><a href="javascript:void(0);">Produto 03</a></li>
-                              <li><a href="javascript:void(0);">Produto 04</a></li>
-                              <li><a href="javascript:void(0);">Produto 05</a></li>
-                          </ul>
-                      </li>
-                      <li>
-                          <a href="javascript:void(0);">Categoria 03</a>
-                          <ul>
-                              <li><a href="javascript:void(0);">Produto 01</a></li>
-                              <li><a href="javascript:void(0);">Produto 02</a></li>
-                              <li><a href="javascript:void(0);">Produto 03</a></li>
-                              <li><a href="javascript:void(0);">Produto 04</a></li>
-                              <li><a href="javascript:void(0);">Produto 05</a></li>
-                          </ul>
-                      </li>
-                      <li>
-                          <a href="javascript:void(0);">Categoria 04</a>
-                          <ul>
-                              <li><a href="javascript:void(0);">Produto 01</a></li>
-                              <li><a href="javascript:void(0);">Produto 02</a></li>
-                              <li><a href="javascript:void(0);">Produto 03</a></li>
-                              <li><a href="javascript:void(0);">Produto 04</a></li>
-                              <li><a href="javascript:void(0);">Produto 05</a></li>
-                          </ul>
-                      </li>
-                      <li>
-                          <a href="javascript:void(0);">Categoria 05</a>
-                          <ul>
-                              <li><a href="javascript:void(0);">Produto 01</a></li>
-                              <li><a href="javascript:void(0);">Produto 02</a></li>
-                              <li><a href="javascript:void(0);">Produto 03</a></li>
-                              <li><a href="javascript:void(0);">Produto 04</a></li>
-                              <li><a href="javascript:void(0);">Produto 05</a></li>
-                          </ul>
-                      </li>
+                      </li>-->
                   </ul>
               </div>
               <!-- / MENU CATEGORIAS -->

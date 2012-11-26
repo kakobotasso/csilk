@@ -14,6 +14,9 @@
 /log/*.log
 /tmp
 config/database.yml
+/public/system
+.gitignore
+.webbynode
 
 # Ignore temporary files VIM
 *.swp
