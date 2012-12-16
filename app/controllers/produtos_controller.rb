@@ -1,5 +1,5 @@
 class ProdutosController < ApplicationController
   def index
-    @produto = Produto.find_by_slug(params[:slug])
+    @produto = Produto.find_by_slug(params[:produto])
   end
 end

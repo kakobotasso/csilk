@@ -1,0 +1,26 @@
+<% content_for :title do %> <%= "#{@categoria.nome} - CSilkBrindes" %> <% end %>
+
+<% content_for :bread do %>
+  <%= link_to "Ínicio", root_path %> > 
+  <%= @categoria.nome %>
+<% end %>
+
+<!-- PRODUTOS CATEGORIA -->
+<div id="direitaProdutos">
+    <div id="produtosCategoria">
+        <ul>
+            <% @produtos.each do |p| %>
+              <li class="<%= cycle("","", "terceira") %>">
+                  <div class="guardaImagemProduto">
+                      <a href="<%= "/produtos/#{@categoria.slug}/#{p.slug}" %>"><img src="<%= p.fotos.first.picture.url(:medio) %>" alt="<%= p.nome %>" /></a>
+                  </div>
+                  <a href="<%= "/produtos/#{@categoria.slug}/#{p.slug}" %>" class="guardaInfosProduto">
+                      <span class="nomeProduto"><%= p.nome %></span>
+                      <span class="descProduto"> <%= desc(p) %></span>
+                  </a>
+              </li>
+            <% end %>
+        </ul>
+    </div>
+</div>
+<!-- / PRODUTOS CATEGORIA -->

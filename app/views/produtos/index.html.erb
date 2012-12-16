@@ -3,8 +3,8 @@
 <% content_for :metakeywords do %> <%= @produto.keywords %> <% end %>
 
 <% content_for :bread do %>
-	<%= link_to "Ínicio", "/" %> > 
-	<%= link_to @produto.categoria.nome, "/#{@produto.categoria.slug}" %> >
+	<%= link_to "Ínicio", root_path %> > 
+	<%= link_to @produto.categoria.nome, "/produtos/#{@produto.categoria.slug}" %> >
 	<%= @produto.nome %>
 <% end %>
 

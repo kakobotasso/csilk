@@ -22,7 +22,8 @@ Csilk::Application.routes.draw do
     }
   end
 
-  get '/produtos/:slug' => 'produtos#index'
+  get '/produtos/:categoria' => 'categoria#index', :as => "categoria"
+  get '/produtos/:categoria/:produto' => 'produtos#index', :as => "produto"
 
   namespace :admin do
     # colocar todos os resources aqui

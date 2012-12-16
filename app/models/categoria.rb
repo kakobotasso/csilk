@@ -6,4 +6,5 @@ class Categoria < ActiveRecord::Base
   validates_presence_of :slug
   validates_uniqueness_of :nome
   validates_uniqueness_of :slug
+
 end
