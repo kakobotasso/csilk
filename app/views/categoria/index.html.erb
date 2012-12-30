@@ -12,11 +12,12 @@
             <% @produtos.each do |p| %>
               <li class="<%= cycle("","", "terceira") %>">
                   <div class="guardaImagemProduto">
-                      <a href="<%= "/produtos/#{@categoria.slug}/#{p.slug}" %>"><img src="<%= p.fotos.first.picture.url(:medio) %>" alt="<%= p.nome %>" /></a>
+                    <%= link_to image_tag(p.fotos.first.picture.url(:medio), :alt => p.nome ), produto_path(@categoria.slug, p.slug) %>
                   </div>
-                  <a href="<%= "/produtos/#{@categoria.slug}/#{p.slug}" %>" class="guardaInfosProduto">
-                      <span class="nomeProduto"><%= p.nome %></span>
-                      <span class="descProduto"> <%= desc(p) %></span>
+
+                  <a href="<%= produto_path(@categoria.slug, p.slug) %>" class="guardaInfosProduto">
+                      <span class='nomeProduto'><%= p.nome %></span>
+                      <span class='descProduto'> <%= desc(p) %></span>
                   </a>
               </li>
             <% end %>
