@@ -451,6 +451,7 @@ body{
 #direitaProdutos #produtosCategoria ul li{
     float:left;
     width:183px;
+    height:212px; 
     background:#adadad;
     border:1px solid #464646;
     padding:10px 10px 10px 10px;
