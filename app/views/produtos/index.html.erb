@@ -55,7 +55,7 @@
       var url = location.pathname.split("/");
 
       var categoria = "<%= @produto.categoria.slug %>"; // url[1]
-      var produto = url[2];//3
+      var produto = "<%= @produto.slug %>";//url[2];//3
       
       $("#guardaMenuCategoria ul li#"+categoria+" a:eq(0)").addClass("marcado");
       $("#guardaMenuCategoria ul li#"+categoria+" ul").slideDown(500);
