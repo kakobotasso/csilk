@@ -65,16 +65,17 @@
               <div id="guardaMenuCategoria">
                   <ul>
                   	<% categorias.each do |c| %>
-                  	<li id="<%= c.slug %>">
-                  		<%= link_to c.nome, c.slug %>
-                  		<% if c.produtos.size > 0 %>
-                  		<ul>
-                  		  <% c.produtos.each do |p| %>
-                  		  <li><%= link_to p.nome, p.slug, :id => p.slug %></li>
-                  		  <% end %>
-                  		</ul>
-                  		<% end %>
-                  	</li>	
+                      <% if c.produtos.size > 0 %>
+                    	<li id="<%= c.slug %>">
+                    		<%= link_to c.nome, c.slug %>
+                    		<ul>
+                    		  <% c.produtos.each do |p| %>
+                    		  <li><%= link_to p.nome, p.slug, :id => p.slug %></li>
+                    		  <% end %>
+                    		</ul>
+                    		
+                    	</li>	
+                      <% end %>
                     <% end %>
                   </ul>
               </div>
@@ -122,7 +123,9 @@
                       <p>Categorias</p>
                       <ul>
                       	<% categorias.each do |c| %>
-                      	<li><%= link_to c.nome, c.slug %></li>
+                          <% if c.produtos.size > 0 %>
+                      	   <li><%= link_to c.nome, c.slug %></li>
+                          <% end %>
                         <% end %>
                       </ul>
                   </div>
