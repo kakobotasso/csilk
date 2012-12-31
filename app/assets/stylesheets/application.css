@@ -616,3 +616,48 @@ body{
     font-size:18px;
     padding:0px 0px 10px 0px;
 }
+
+#quemSomos{
+    float:left;
+    padding:20px 0px 0px 0px;
+}
+
+#quemSomos h1{
+    float:left;
+    width:100%;
+    font-family:Arial;
+    padding:0px 0px 20px 0px;
+    text-transform:uppercase;
+}
+
+#quemSomos p{
+    float:left;
+    font-family:Arial;
+    padding:0px 0px 10px 0px;
+}
+
+#quemSomos form ul{
+    float:left;
+}
+
+#quemSomos form ul li{
+    float:left;
+    width:100%;
+    padding:0px 0px 15px 0px;
+}
+
+#quemSomos form ul li label span{
+    font-weight:bold;
+}
+
+#quemSomos form ul li input,
+#quemSomos form ul li textarea{
+    display:block;
+    padding:5px 5px;
+    border:1px solid #999;
+}
+
+#quemSomos form ul li input.text,
+#quemSomos form ul li textarea{
+    width:400px;
+}

@@ -1,0 +1,100 @@
+<%= content_for :title do %>
+	Seja um fornecedor - CSilkBrindes
+<% end %>
+
+<% flash.each do |type, message| %>
+	<script type="text/javascript">
+		alert("<%= message %>");
+	</script>
+<% end %>
+
+<!-- SEJA UM FORNECEDOR -->
+<div id="quemSomos">
+	<h1>Seja um fornecedor</h1>
+	<%= form_for @fornecedor do |f| %>
+		<ul>
+			<li>
+				<label>
+					<span>Razão social:</span><br/>
+					<%= f.text_field :razao_social, :class => "text" %>
+				</label>
+			</li>
+
+			<li>
+				<label>
+					<span>Nome fantasia:</span><br/>
+					<%= f.text_field :nome_fantasia, :class => "text" %>
+				</label>
+			</li>
+
+			<li>
+				<label>
+					<span>CNPJ:</span><br/>
+					<%= f.text_field :cnpj, :class => "text" %>
+				</label>
+			</li>
+
+			<li>
+				<label>
+					<span>Nome para contato:</span><br/>
+					<%= f.text_field :nome_contato, :class => "text" %>
+				</label>
+			</li>
+
+			<li>
+				<label>
+					<span>Telefone:</span><br/>
+					<%= f.text_field :telefone, :class => "text" %>
+				</label>
+			</li>
+
+			<li>
+				<label>
+					<span>Celular:</span><br/>
+					<%= f.text_field :celular, :class => "text" %>
+				</label>
+			</li>
+
+			<li>
+				<label>
+					<span>Fax:</span><br/>
+					<%= f.text_field :fax, :class => "text" %>
+				</label>
+			</li>
+
+			<li>
+				<label>
+					<span>Site:</span><br/>
+					<%= f.text_field :site, :class => "text" %>
+				</label>
+			</li>
+
+			<li>
+				<label>
+					<span>E-mail:</span><br/>
+					<%= f.text_field :email, :class => "text" %>
+				</label>
+			</li>
+
+			<li>
+				<label>
+					<span>Cidade:</span><br/>
+					<%= f.text_field :cidade, :class => "text" %>
+				</label>
+			</li>
+
+			<li>
+				<label>
+					<span>Estado:</span><br/>
+					<%= f.text_field :estado, :class => "text" %>
+				</label>
+			</li>
+
+			<li>
+				<%= f.submit "Enviar" %>
+			</li>
+		</ul>
+	<% end %>
+
+</div>
+<!-- / SEJA UM FORNECEDOR -->
