@@ -1,0 +1,57 @@
+<%= content_for :title do %>
+	Contato - CSilkBrindes
+<% end %>
+
+<% flash.each do |type, message| %>
+	<script type="text/javascript">
+		alert("<%= message %>");
+	</script>
+<% end %>
+
+<!-- CONTATO -->
+<div id="quemSomos">
+	<h1>Contato</h1>
+	<%= form_for @contato do |f| %>
+		<ul>
+			<li>
+				<label>
+					<span>Nome:</span><br/>
+					<%= f.text_field :nome, :class => "text" %>
+				</label>
+			</li>
+
+			<li>
+				<label>
+					<span>E-mail:</span><br/>
+					<%= f.text_field :email, :class => "text" %>
+				</label>
+			</li>
+
+			<li>
+				<label>
+					<span>Telefone:</span><br/>
+					<%= f.text_field :telefone, :class => "text" %>
+				</label>
+			</li>
+
+			<li>
+				<label>
+					<span>Assunto:</span><br/>
+					<%= f.text_field :assunto, :class => "text" %>
+				</label>
+			</li>
+
+			<li>
+				<label>
+					<span>Mensagem:</span><br/>
+					<%= f.text_area :mensagem %>
+				</label>
+			</li>
+
+			<li>
+				<%= f.submit 'Enviar' %>
+			</li>
+		</ul>
+	<% end %>
+</div>
+<!-- / CONTATO -->
