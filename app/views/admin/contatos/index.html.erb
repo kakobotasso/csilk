@@ -1,30 +1,36 @@
 <h1>Lista de contatos</h1>
 
-<table>
-  <tr>
-    <th>Nome</th>
-    <th>Email</th>
-    <th>Telefone</th>
-    <th>Assunto</th>
-    <th>Mensagem</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<div id="guardaListagens">
+    <table>
+        <tr id="firstTr">
+            <th>Nome</th>
+            <th>E-mail</th>
+            <th>Telefone</th>
+            <th>Assunto</th>
+            <!-- <th>Mensagem</th> -->
+            <th style="width:17%;"></th>
+            <th style="width:17%;"></th>
+            <th style="width:16%;"></th>
+        </tr>
 
-<% @contatos.each do |contato| %>
-  <tr>
-    <td><%= contato.nome %></td>
-    <td><%= contato.email %></td>
-    <td><%= contato.telefone %></td>
-    <td><%= contato.assunto %></td>
-    <td><%= contato.mensagem %></td>
-    <td><%= link_to 'Mostrar', [:admin, contato] %></td>
-    <td><%= link_to 'Deletar', [:admin, contato], confirm: 'Tem certeza que deseja excluir este contato?', method: :delete %></td>
-  </tr>
-<% end %>
-</table>
+        <% @contatos.each do |contato| %>
+            <% if contato == @contatos.last %>
+            <tr class="ultimaTr">
+            <% else %>
+            <tr>
+            <% end %>
+                <td><%= contato.nome %></td>
+                <td><%= contato.email %></td>
+                <td><%= contato.telefone %></td>
+                <td><%= contato.assunto %></td>
+                <!-- <td><%#= contato.mensagem %></td> -->
+                <td style="width:10%;"><%= link_to 'Mostrar', [:admin, contato] %></td>
+                <td style="width:10%;"><%= link_to 'Deletar', [:admin, contato], confirm: 'Tem certeza que deseja excluir este contato?', method: :delete, :class => 'deletar' %></td>
+            </tr>
+        <% end %>
+    </table>
 
-<br />
+    <br />
 
-<%= link_to 'Novo Contato', new_admin_contato_path %>
+    <%#= link_to 'Novo Contato', new_admin_contato_path, :id => 'novoItem' %>
+</div>
