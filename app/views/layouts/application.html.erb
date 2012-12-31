@@ -92,9 +92,11 @@
                       <p>NOVIDADES <br/> Deseja receber informações e novidades?</p>
                   </div>
                   <div id="guardaFormNewsletter">
-                      <input type="text" name="" value="Nome" />
-                      <input type="text" name="" value="E-mail" />
-                      <%= link_to image_tag("bt-enviar.gif", :alt => ""), "javascript:void(0);" %>
+                      <form>
+                        <input type="text" name="" id="campoNomeNewsletter" value="Nome" />
+                        <input type="text" name="" id="campoEmailNewsletter" value="E-mail" />
+                        <%= link_to image_tag("bt-enviar.gif", :alt => ""), "javascript:void(0);" %>
+                      </form>
                   </div>
               </div>
               <!-- / NEWSLETTER -->
@@ -134,5 +136,42 @@
           <p id="direitosReservados">Todos os direitos reservados - CSilkBrindes - <%= Time.now.year %></p>
       </div>
       <!-- / RODAPE -->
+
+      <script type="text/javascript">
+        $(function(){
+          var regex = /^[\w\.=-]+@[\w\.-]+\.[\w]{2,3}$/;
+          $("#guardaFormNewsletter a").click(function(){
+            // VALIDA NOME
+            if( $("#campoNomeNewsletter").val().length > 2 && $("#campoNomeNewsletter").val() != 'Nome' ){
+              // VALIDA EMAIL
+              if( $("#campoEmailNewsletter").val() != 'E-mail' && regex.test($("#campoEmailNewsletter").val()) ){
+                // SALVA DADOS
+                $.ajax({
+                  url: "<%= newsletters_path %>",
+                  type: "GET",
+                  data:{
+                    "newsletter":{
+                      "nome":  $("#campoNomeNewsletter").val(),
+                      "email": $("#campoEmailNewsletter").val()
+                    }
+                  },
+                  success:function(data){
+                    alert(data);
+                    $("#campoNomeNewsletter").val("Nome");
+                    $("#campoEmailNewsletter").val("E-mail");
+                  }
+                });
+
+              }else{
+                alert("Por favor, digite um e-mail válido")
+                $("#campoEmailNewsletter").focus();
+              }
+            }else{
+              alert("Por favor, digite um nome válido");
+              $("#campoNomeNewsletter").focus();
+            }
+          });
+        });
+      </script>
 </body>
 </html>

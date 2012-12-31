@@ -40,6 +40,9 @@ Csilk::Application.routes.draw do
   get '/seja-um-fornecedor' => 'fornecedor#new', :as => "fornecedores"
   post '/seja-um-fornecedor' => 'fornecedor#create'
 
+  # NEWSLETTER
+  get '/newsletter' => 'newsletter#novo', :as => "newsletters"
+
   namespace :admin do
     # colocar todos os resources aqui
     resources :categorias

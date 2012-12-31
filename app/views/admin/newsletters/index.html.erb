@@ -1,24 +1,28 @@
 <h1>Lista de newsletters</h1>
+<div id="guardaListagens">
+    <table>
+        <tr id="firstTr">
+            <th style="width:35%;">Nome</th>
+            <th style="width:35%;">Email</th>
+            <th style="width:15%;"></th>
+            <th style="width:15%;"></th>
+        </tr>
 
-<table>
-  <tr>
-    <th>Nome</th>
-    <th>Email</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+        <% @newsletters.each do |newsletter| %>
+            <% if newsletter == @newsletters.last %>
+            <tr class="ultimaTr">
+            <% else %>
+            <tr>
+            <% end %>
+                <td style="width:35%;"><%= newsletter.nome %></td>
+                <td style="width:35%;"><%= newsletter.email %></td>
+                <td style="width:15%;"><%= link_to 'Mostrar', [:admin, newsletter] %></td>
+                <td style="width:15%;"><%= link_to 'Deletar', [:admin, newsletter], confirm: 'Tem certeza que deseja excluir este assinante?', method: :delete, :class => 'deletar' %></td>                
+            </tr>
+        <% end %>
+    </table>
 
-<% @newsletters.each do |newsletter| %>
-  <tr>
-    <td><%= newsletter.nome %></td>
-    <td><%= newsletter.email %></td>
-    <td><%= link_to 'Mostrar', [:admin, newsletter] %></td>
-    <td><%= link_to 'Deletar', [:admin, newsletter], confirm: 'Tem certeza que deseja excluir este assinante?', method: :delete %></td>
-  </tr>
-<% end %>
-</table>
+    <br />
 
-<br />
-
-<%= link_to 'Novo Newsletter', new_admin_newsletter_path %>
+    <%#= link_to 'Novo Newsletter', new_admin_newsletter_path, :id => "novoItem" %>
+</div>

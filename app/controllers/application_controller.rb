@@ -3,6 +3,8 @@ class ApplicationController < ActionController::Base
 
   helper_method :categorias, :categoria_menu
 
+
+
   def categorias
   	@categorias = Categoria.all
   end

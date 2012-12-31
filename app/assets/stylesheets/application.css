@@ -206,6 +206,9 @@ body{
     overflow:hidden;
     position:relative;
 }
+
+#content #guardaProdutosVendidos #geralProdutosVendidos #produtosVendidos{ height:116px; }
+
 #content #guardaProdutosVendidos #geralProdutosVendidos #produtosVendidos ul,
 #content #guardaProdutosDestaques #geralProdutosDestaques #produtosDestaque ul{
     float:left;
