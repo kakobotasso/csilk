@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   def categoria_menu
   	f_id = Categoria.first.id
   	l_id = Categoria.last.id
-  	random = rand(f_id...l_id)
+  	random = rand(f_id...l_id).to_i
   	if Categoria.find_by_id(random).produtos.size > 0
   		Categoria.find_by_id(random).slug
   	else
