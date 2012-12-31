@@ -12,3 +12,28 @@
 //
 //= require jquery
 //= require jquery_ujs
+
+
+$(function(){
+    /* SLIDER HOME */
+    var _html = "<ul>";
+    for(var i = 0; i < $("#banners a").length; i++ ){
+        _html += "<li><a href='javascript:void(0);'>"+(i+1)+"</a></li>";
+    }
+    _html += "</ul>";
+    
+    $("#paginacao").html(_html);
+    
+    
+    $("#paginacao a").click(function(){
+        var ind = $("#paginacao a").index(this);
+        
+        $("#paginacao a").removeClass('marcado');
+        $(this).addClass('marcado');
+        
+        $("#banners a").fadeOut(500);
+        $("#banners a").eq(ind).fadeIn(500);
+    });
+    $("#paginacao a").eq(0).trigger('click');
+    /* / SLIDER HOME */
+});

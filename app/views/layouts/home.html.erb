@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br" lang="pt-br">
+<head>
+  <title><%= yield :title %></title>
+  <meta name="author" content="Kako Botasso" />
+  <meta name="description" content="<%= yield :metadescription %>" />
+  <meta name="keywords" content="<%= yield :metakeywords %>" />
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<body>
+      <div id="header">
+          <div class="wrapper">
+              <!-- LOGO -->
+              <div id="guardaLogo">
+                  <h1>
+                  	<%= link_to image_tag("logo.png", :alt => "CSilkBrindes"), "/", :title => "CsilkBrindes" %>
+                  </h1>
+              </div>
+              <!-- / LOGO -->
+
+              <!-- REDES SOCIAIS -->
+              <div id="redesSociais">
+                  <ul>
+                      <li><%= link_to image_tag("logo-facebook.png", :alt => "Facebook"), "javascript:void(0);" %></li>
+                      <li><%= link_to image_tag("logo-twitter.png", :alt => "Twitter"), "javascript:void(0);" %></li>
+                      <li><%= link_to image_tag("logo-linkedin.png", :alt => "LinkedIn"), "javascript:void(0);" %></li>
+                      <li><%= link_to image_tag("logo-flickr.png", :alt => "Flickr"), "javascript:void(0);" %></li>
+                      <li><%= link_to image_tag("logo-youtube.png", :alt => "Youtube"), "javascript:void(0);" %></li>
+                  </ul>
+              </div>
+              <!-- / REDES SOCIAIS -->
+          </div>
+
+          <!-- MENU -->
+          <div id="menu">
+              <div id="contentMenu">
+                  <ul>
+                      <li><%= link_to "", quem_somos_path, :id => "quem-somos", :title => "Quem Somos"%></li>
+                      <li><%= link_to "", fazemos_path, :id => "o-que-fazemos", :title => "O que fazemos"%></li>
+                      <li><%= link_to "", categoria_path(categoria_menu), :id => "produtos", :title => "Produtos"%></li>
+                      <li><%= link_to "", "javascript:void(0);", :id => "clientes", :title => "Clientes"%></li>
+                      <li class="ultimaLiTopo"><%= link_to "", contatos_path, :id => "contato", :title => "Contato"%></li>
+                  </ul>
+              </div>
+          </div>
+          <!-- / MENU -->
+      </div>
+      
+      <!-- CONTEUDO -->
+      <div id="contentWrapper">
+          <div id="content">
+              <%= yield %>
+
+              
+              <!-- NEWSLETTER -->
+              <div id="guardaNewsletter">
+                  <div id="novidadesNews">
+                      <p>NOVIDADES <br/> Deseja receber informações e novidades?</p>
+                  </div>
+                  <div id="guardaFormNewsletter">
+                      <input type="text" name="" value="Nome" />
+                      <input type="text" name="" value="E-mail" />
+                      <%= link_to image_tag("bt-enviar.gif", :alt => ""), "javascript:void(0);" %>
+                  </div>
+              </div>
+              <!-- / NEWSLETTER -->
+          </div>
+      </div>
+      <!-- / CONTEUDO -->
+
+      <!-- RODAPE -->
+      <div id="footer">
+          <div class="wrapper">
+              <div id="contentRodape">
+                  <div id="esquerdaRodape">
+                  	<%= link_to image_tag("logo-rodape.png", :alt => "CsilkBrindes"), "/" %>
+                      
+                      <ul>
+                          <li><%= link_to "Quem somos", quem_somos_path %></li>
+                          <li><%= link_to "O que fazemos", fazemos_path %></li>
+                          <li><%= link_to "Produtos", categoria_path(categoria_menu) %></li>
+                          <li><%= link_to "Clientes", "javascript:void(0);" %></li>
+                          <li><%= link_to "Contato", contatos_path %></li>
+                          <li><%= link_to "Seja um fornecedor", fornecedores_path %></li>
+                      </ul>
+                  </div>
+                  
+                  <div id="categoriasRodape">
+                      <p>Categorias</p>
+                      <ul>
+                      	<% categorias.each do |c| %>
+                          <% if c.produtos.size > 0 %>
+                      	   <li><%= link_to c.nome, categoria_path(c.slug) %></li>
+                          <% end %>
+                        <% end %>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+          <p id="direitosReservados">Todos os direitos reservados - CSilkBrindes - <%= Time.now.year %></p>
+      </div>
+      <!-- / RODAPE -->
+</body>
+</html>

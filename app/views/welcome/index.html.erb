@@ -1,8 +1,84 @@
 <%= content_for :title do %>
-	<title>CSilkBrindes</title>
+	CSilkBrindes
 <% end %>
 
-<div id="centraliza">
-	<%= image_tag 'logo2.png' %>
-	<p> Site em construção.<br/> Para maiores informações, entre em contato com <a href="mailto:contato@csilkbrindes.com.br">contato@csilkbrindes.com.br</a> </p>
+<!-- SLIDER -->
+<div id="guardaSlider">
+  <div id="banners">
+  	<% @banners.each do |b| %>
+  		<%= link_to image_tag( b.imagem, :alt => b.nome ), b.link %>
+  	<% end %>
+  </div>
+  <div id="paginacao">                      
+  </div>
 </div>
+<!-- / SLIDER -->
+
+<!-- PRODUTOS EM DESTAQUE -->
+<div id="guardaProdutosDestaques">
+  <p class="tituloDestaque">Produtos em destaque</p>
+  <div id="geralProdutosDestaques">
+  		<%= link_to image_tag("seta-esquerda-destaques.png", :alt => "Anterior"), "javascript:void(0);", :class => "setas", :id => "setaEsquerda" %>
+  		<%= link_to image_tag("seta-direita-destaques.png", :alt => "Próximo"), "javascript:void(0);", :class => "setas", :id => "setaDireita" %>
+      <div id="produtosDestaque">
+          <ul>
+              <%#= @produtos %>
+              <li>
+                  <div class="sliderProdutoDestaque">
+                      <div class="guardaImagem"></div>
+                      <div class="nomeProduto">
+                          <p><a href="javascript:void(0);">Nome do <br/> produto </a></p>
+                      </div>
+                      <div class="saibaMais">
+                      	<%= link_to image_tag("bt-saibia-mais.gif", :alt => "Saiba Mais"), "javascript:void(0);" %>
+                      </div>
+                  </div>
+                  <div class="sliderProdutoDestaque">
+                      <div class="guardaImagem"></div>
+                      <div class="nomeProduto">
+                          <p><a href="javascript:void(0);">Nome do <br/> produto </a></p>
+                      </div>
+                      <div class="saibaMais">
+                          <%= link_to image_tag("bt-saibia-mais.gif", :alt => "Saiba Mais"), "javascript:void(0);" %>
+                      </div>
+                  </div>
+              </li>
+              
+          </ul>
+      </div>
+      <!-- PAGINACAO -->
+      <div class="guardaPaginacaoSlider">
+          <a href="javascript:void(0);" class="marcado"></a>
+          <a href="javascript:void(0);"></a>
+          <a href="javascript:void(0);"></a>
+          <a href="javascript:void(0);"></a>
+      </div>
+      <!-- / PAGINACAO -->
+  </div>
+</div>
+<!-- / PRODUTOS EM DESTAQUE -->
+
+<!-- PRODUTOS MAIS VENDIDOS -->
+<div id="guardaProdutosVendidos">
+  <p class="tituloDestaque">Mais vendidos</p>
+  <div id="geralProdutosVendidos">
+  	<%= link_to image_tag("seta-esquerda-destaques.png", :alt => "Anterior"), "javascript:void(0);", :class => "setas", :id => "setaEsquerdaVendidos" %>
+  		<%= link_to image_tag("seta-direita-destaques.png", :alt => "Próximo"), "javascript:void(0);", :class => "setas", :id => "setaDireitaVendidos" %>
+      <div id="produtosVendidos">
+          <ul>
+              <li>
+                  <div class="sliderProdutoVendidos">
+                      <div class="guardaImagem"></div>
+                      <div class="nomeProduto">
+                          <p><a href="javascript:void(0);">Nome do <br/> produto </a></p>
+                      </div>
+                      <div class="saibaMais">
+                          <%= link_to image_tag("bt-saibia-mais.gif", :alt => "Saiba Mais"), "javascript:void(0);" %>
+                      </div>
+                  </div>
+              </li>
+          </ul>
+      </div>
+  </div>
+</div>
+<!-- / PRODUTOS MAIS VENDIDOS -->
