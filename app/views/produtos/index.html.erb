@@ -22,11 +22,10 @@
               <div id="miniaturas">
                   <ul>
                   	<% @produto.fotos.each do |u| %>
-				    <li>
-				      <%= link_to (image_tag u.picture.url(:menor)), "javascript:void(0);" %>
-				    </li>
-				  	<% end %>
-                      
+        				    <li>
+        				      <%= link_to (image_tag u.picture.url(:menor)), "javascript:void(0);" %>
+        				    </li>
+        				  	<% end %>
                   </ul>
               </div>
           </div>
@@ -35,6 +34,45 @@
       
       <!-- LADO DIREITO -->
       <div id="ladoDireitoProduto">
+        <p>
+          <strong>Gostou?</strong>
+          Entre em contato conosco
+        </p>
+        <form>
+          <ul>
+            <li>
+              <label>
+                <span>Nome</span><br/>
+                <input type="text" name="" id="campoNome" />
+              </label>
+            </li>
+
+            <li>
+              <label>
+                <span>E-mail</span><br/>
+                <input type="text" name="" id="campoEmail" />
+              </label>
+            </li>
+
+            <li>
+              <label>
+                <span>Telefone</span><br/>
+                <input type="text" name="" id="campoTelefone" />
+              </label>
+            </li>
+
+            <li>
+              <label>
+                <span>Mensagem</span><br/>
+                <textarea cols="1" rows="1" name="" id="campoMensagem"></textarea>
+              </label>
+            </li>
+
+            <li>
+              <a href="javascript:void(0);">Enviar</a>
+            </li>
+          </ul>
+        </form>
       </div>
       <!-- / LADO DIREITO -->
       
@@ -107,5 +145,31 @@
 
       $("#miniaturas ul li a").eq(0).trigger("click");
       /* / CARROSSEL */
+
+      /* AJAX CONTATO */
+      $("#ladoDireitoProduto form a").click(function(){
+        $.ajax({
+          url: "<%= contato_produtos_path(@produto.categoria.slug, @produto.slug) %>",
+          type: "GET",
+          data:{
+            "contato_produto":{
+              "nome":  $("#campoNome").val(),
+              "email": $("#campoEmail").val(),
+              "telefone":$("#campoTelefone").val(),
+              "assunto": "Contato para o produto <%= @produto.nome %>",
+              "mensagem":$("#campoMensagem").val(),
+              "produto_id": "<%= @produto.id %>"
+            }
+          },
+          success:function(data){
+            alert(data);
+            $("#campoNome").val("");
+            $("#campoEmail").val("");
+            $("#campoTelefone").val("");
+            $("#campoMensagem").val("");
+          }
+        });
+      });
+      /* / AJAX CONTATO */
   });
 </script>

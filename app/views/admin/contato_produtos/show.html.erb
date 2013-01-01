@@ -1,34 +1,59 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Nome:</b>
-  <%= @contato_produto.nome %>
-</p>
+<h1>CONTATO DE <%= @contato_produto.nome.upcase %> </h1>
 
-<p>
-  <b>Email:</b>
-  <%= @contato_produto.email %>
-</p>
+<div id="detalheItemAdmin">
+  <ul>
+    <li>
+      <p>
+        <b>Nome:</b> <br/>
+        <%= @contato_produto.nome %>
+        <br/><br/>
+      </p>
+    </li>
 
-<p>
-  <b>Telefone:</b>
-  <%= @contato_produto.telefone %>
-</p>
+    <li>
+      <p>
+        <b>E-mail:</b> <br/>
+        <%= @contato_produto.email %>
+        <br/><br/>
+      </p>
+    </li>
 
-<p>
-  <b>Assunto:</b>
-  <%= @contato_produto.assunto %>
-</p>
+    <li>
+      <p>
+        <b>Telefone:</b><br/>
+        <%= @contato_produto.telefone %>
+        <br/><br/>
+      </p>
+    </li>
 
-<p>
-  <b>Mensagem:</b>
-  <%= @contato_produto.mensagem %>
-</p>
+    <li>
+      <p>
+        <b>Produto:</b><br/>
+        <%= @contato_produto.produto.nome %>
+        <br/><br/>
+      </p>
+    </li>
 
-<p>
-  <b>Produto:</b>
-  <%= @contato_produto.produto %>
-</p>
+    <li>
+      <p>
+        <b>Assunto:</b><br/>
+        <%= @contato_produto.assunto %>
+        <br/><br/>
+      </p>
+    </li>
 
+    <li>
+      <p>
+        <b>Mensagem:</b><br/>
+        <%= @contato_produto.mensagem %>
+        <br/><br/>
+      </p>
+    </li>
 
-<%= link_to 'Voltar', admin_contato_produtos_path %>
+    <li>
+      <%= link_to 'Voltar', admin_contato_produtos_path %>
+    </li>
+  </ul>
+</div>
