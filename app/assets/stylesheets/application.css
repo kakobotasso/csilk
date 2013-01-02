@@ -578,11 +578,62 @@ body{
 
 #direitaProdutos #guardaDetalheProduto #ladoDireitoProduto{
     float:left;
-    width:285px;
-    height:402px;
+    width:275px;
+    height:392px;
     background:#e7e7e7;
     display:inline;
     margin:0px 0px 0px 25px;
+    padding:10px 0px 0px 10px;
+}
+
+
+#direitaProdutos #guardaDetalheProduto #ladoDireitoProduto p{
+    float:left;
+    width:100%;
+    font-size:18px;
+}
+
+#direitaProdutos #guardaDetalheProduto #ladoDireitoProduto p strong{
+    float:left;
+    width:100%;
+    text-transform:uppercase;
+    font-size:20px;
+}
+
+#direitaProdutos #guardaDetalheProduto #ladoDireitoProduto form{ float:left; }
+
+#direitaProdutos #guardaDetalheProduto #ladoDireitoProduto form ul{
+    float:left;
+    padding:25px 0px 0px 0px;
+}
+
+#direitaProdutos #guardaDetalheProduto #ladoDireitoProduto form ul li{
+    float:left;
+    width:260px; 
+    padding:0px 0px 15px 0px;
+}
+
+#direitaProdutos #guardaDetalheProduto #ladoDireitoProduto form input{
+    float:left;
+    padding:5px;
+    width:250px;
+}
+
+#direitaProdutos #guardaDetalheProduto #ladoDireitoProduto form textarea{
+    float:left;
+    padding:5px;
+    border:1px solid #999;
+    width:250px;
+    height:50px;
+}
+
+#direitaProdutos #guardaDetalheProduto #ladoDireitoProduto form span{
+    float:left;
+    font-size:16px;
+}
+
+#direitaProdutos #guardaDetalheProduto #ladoDireitoProduto form a{
+    float:right;
 }
 
 #direitaProdutos #guardaDetalheProduto #guardaDescricaoProduto{
@@ -664,3 +715,4 @@ body{
 #quemSomos form ul li textarea{
     width:400px;
 }
+
