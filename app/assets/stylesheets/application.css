@@ -625,6 +625,7 @@ body{
     border:1px solid #999;
     width:250px;
     height:50px;
+    overflow:auto;
 }
 
 #direitaProdutos #guardaDetalheProduto #ladoDireitoProduto form span{

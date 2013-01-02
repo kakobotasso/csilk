@@ -148,27 +148,56 @@
 
       /* AJAX CONTATO */
       $("#ladoDireitoProduto form a").click(function(){
-        $.ajax({
-          url: "<%= contato_produtos_path(@produto.categoria.slug, @produto.slug) %>",
-          type: "GET",
-          data:{
-            "contato_produto":{
-              "nome":  $("#campoNome").val(),
-              "email": $("#campoEmail").val(),
-              "telefone":$("#campoTelefone").val(),
-              "assunto": "Contato para o produto <%= @produto.nome %>",
-              "mensagem":$("#campoMensagem").val(),
-              "produto_id": "<%= @produto.id %>"
+        var regex = /^[\w\.=-]+@[\w\.-]+\.[\w]{2,3}$/;
+        // VALIDA NOME
+        if( $("#campoNome").val().length > 2){
+          // VALIDA EMAIL
+          if( regex.test($("#campoEmail").val()) ){
+            // VALIDA TELEFONE
+            if( $("#campoTelefone").val().length > 9 ){
+              // VALIDA MENSAGEM
+              if( $("#campoMensagem").val().length > 3 ){
+                /* SALVA DADOS */
+                $.ajax({
+                  url: "<%= contato_produtos_path(@produto.categoria.slug, @produto.slug) %>",
+                  type: "GET",
+                  data:{
+                    "contato_produto":{
+                      "nome":  $("#campoNome").val(),
+                      "email": $("#campoEmail").val(),
+                      "telefone":$("#campoTelefone").val(),
+                      "assunto": "Contato para o produto <%= @produto.nome %>",
+                      "mensagem":$("#campoMensagem").val(),
+                      "produto_id": "<%= @produto.id %>"
+                    }
+                  },
+                  success:function(data){
+                    alert(data);
+                    $("#campoNome").val("");
+                    $("#campoEmail").val("");
+                    $("#campoTelefone").val("");
+                    $("#campoMensagem").val("");
+                  }
+                });
+                /* / SALVA DADOS */
+              }else{
+                alert("Por favor, digite uma mensagem válida.");
+                $("#campoMensagem").focus();
+              }
+
+            }else{
+              alert("Por favor, digite um telefone válido.");
+              $("#campoTelefone").focus();
             }
-          },
-          success:function(data){
-            alert(data);
-            $("#campoNome").val("");
-            $("#campoEmail").val("");
-            $("#campoTelefone").val("");
-            $("#campoMensagem").val("");
+
+          }else{
+            alert("Por favor, digite um e-mail válido.");
+            $("#campoEmail").focus();
           }
-        });
+        }else{
+          alert("Por favor, digite um nome válido.");
+          $("#campoNome").focus();
+        }
       });
       /* / AJAX CONTATO */
   });
