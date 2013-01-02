@@ -4,7 +4,7 @@ before_filter :authenticate_user!
   # GET /fotos
   # GET /fotos.json
   def index
-    @fotos = Foto.all
+    @fotos = Foto.all.sort! { |a,b| b.id <=> a.id }
 
     respond_to do |format|
       format.html # index.html.erb

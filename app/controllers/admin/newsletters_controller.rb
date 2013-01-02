@@ -4,7 +4,7 @@ before_filter :authenticate_user!
   # GET /newsletters
   # GET /newsletters.json
   def index
-    @newsletters = Newsletter.all
+    @newsletters = Newsletter.all.sort! { |a,b| b.id <=> a.id }
 
     respond_to do |format|
       format.html # index.html.erb

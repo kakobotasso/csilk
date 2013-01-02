@@ -4,7 +4,7 @@ before_filter :authenticate_user!
   # GET /fornecedores
   # GET /fornecedores.json
   def index
-    @fornecedores = Fornecedor.all
+    @fornecedores = Fornecedor.all.sort! { |a,b| b.id <=> a.id }
 
     respond_to do |format|
       format.html # index.html.erb

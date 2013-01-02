@@ -5,7 +5,7 @@ before_filter :authenticate_user!
   # GET /banners
   # GET /banners.json
   def index
-    @banners = Banner.all
+    @banners = Banner.all.sort! { |a,b| b.id <=> a.id }
 
     respond_to do |format|
       format.html # index.html.erb

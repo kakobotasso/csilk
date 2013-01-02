@@ -5,7 +5,7 @@ before_filter :authenticate_user!
   # GET /categorias
   # GET /categorias.json
   def index
-    @categorias = Categoria.all
+    @categorias = Categoria.all.sort! { |a,b| b.id <=> a.id }
 
     respond_to do |format|
       format.html # index.html.erb
