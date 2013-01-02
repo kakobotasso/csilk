@@ -529,14 +529,27 @@ body{
     padding:13px 0px 0px 0px;
 }
 
-#direitaProdutos #guardaDetalheProduto #guardaFotosProduto #guardaMiniaturas .setas{
-    width:23px;
+#direitaProdutos #guardaDetalheProduto #guardaFotosProduto #guardaMiniaturas .preSeta{
+    width:18px;
     height:55px;
+}
+
+#direitaProdutos #guardaDetalheProduto #guardaFotosProduto #guardaMiniaturas #preSetaEsq{float:left;}
+#direitaProdutos #guardaDetalheProduto #guardaFotosProduto #guardaMiniaturas #preSetaDir{float:right;}
+
+#direitaProdutos #guardaDetalheProduto #guardaFotosProduto #guardaMiniaturas .setas{
+    width:18px;
+    height:55px;
+    background: url('setas-carrossel.png') no-repeat 0px 0px;
+    text-indent:-5000px;
 }
 
 #direitaProdutos #guardaDetalheProduto #guardaFotosProduto #guardaMiniaturas .setas#setaEsq{ float:left; }
 
-#direitaProdutos #guardaDetalheProduto #guardaFotosProduto #guardaMiniaturas .setas#setaDir{ float:right; }
+#direitaProdutos #guardaDetalheProduto #guardaFotosProduto #guardaMiniaturas .setas#setaDir{
+    float:right;
+    background-position:right 0px;
+}
 
 #direitaProdutos #guardaDetalheProduto #guardaFotosProduto #guardaMiniaturas #miniaturas{
     float:left;
