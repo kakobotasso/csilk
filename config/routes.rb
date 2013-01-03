@@ -32,6 +32,7 @@ Csilk::Application.routes.draw do
   # PRODUTOS
   get '/produtos/:categoria/:produto' => 'produtos#index', :as => "produto"
   get '/produtos/:categoria/:produto/salvar-contato' => 'produtos#contato', :as => 'contato_produtos'
+  get '/produtos/:categoria/:produto/visita' => 'produtos#aumenta_visita', :as => 'visita_produtos'
 
   # CONTATO
   get '/contato' => 'contato#new', :as => "contatos"

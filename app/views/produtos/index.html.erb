@@ -169,7 +169,8 @@
                       "assunto": "Contato para o produto <%= @produto.nome %>",
                       "mensagem":$("#campoMensagem").val(),
                       "produto_id": "<%= @produto.id %>"
-                    }
+                    },
+                    "produto_id": "<%= @produto.id %>"
                   },
                   success:function(data){
                     alert(data);
@@ -200,5 +201,13 @@
         }
       });
       /* / AJAX CONTATO */
+
+      /* AJAX VISITA */
+      $.ajax({
+        url: "<%= visita_produtos_path(@produto.categoria.slug, @produto.slug) %>",
+        type: "GET",
+        success:function(data){}
+      });
+      /* / AJAX VISITA */
   });
 </script>
