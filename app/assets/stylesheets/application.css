@@ -252,6 +252,7 @@ body{
     color:#372600;
     text-decoration:none;
     float:left;
+    width: 100px;
     height:55px;
     overflow:hidden;
     font-size:18px;

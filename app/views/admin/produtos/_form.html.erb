@@ -35,6 +35,8 @@
     <%= f.label :description %><br />
     <%= f.text_field :description %>
   </div>
+  <%= f.hidden_field :nvisitas, :value => @produto.nvisitas ||= 0 %>
+  <%= f.hidden_field :ncontatos, :value => @produto.ncontatos ||= 0 %>
   <div class="actions">
     <%= f.submit %>
   </div>
