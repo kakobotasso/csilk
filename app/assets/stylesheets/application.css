@@ -238,6 +238,13 @@ body{
     height:103px;
     background:#C68700;
 }
+
+#content #guardaProdutosVendidos #geralProdutosVendidos #produtosVendidos ul li .sliderProdutoVendidos .guardaImagem img,
+#content #guardaProdutosDestaques #geralProdutosDestaques #produtosDestaque ul li .sliderProdutoDestaque .guardaImagem img{
+    width:116px;
+    height:103px;
+}
+
 #content #guardaProdutosVendidos #geralProdutosVendidos #produtosVendidos ul li .sliderProdutoVendidos .nomeProduto,
 #content #guardaProdutosDestaques #geralProdutosDestaques #produtosDestaque ul li .sliderProdutoDestaque .nomeProduto{
     float:left;
