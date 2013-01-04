@@ -202,9 +202,11 @@ body{
     float:left;
     width:741px;
     height:225px;
-    padding:25px 0px 0px 90px;
+    padding:25px 0px 0px 0px;
     overflow:hidden;
     position:relative;
+    display:inline;
+    margin:0px 0px 0px 90px;
 }
 
 #content #guardaProdutosVendidos #geralProdutosVendidos #produtosVendidos{ height:116px; }
