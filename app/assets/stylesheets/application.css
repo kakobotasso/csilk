@@ -740,3 +740,12 @@ body{
     width:400px;
 }
 
+#quemSomos #guardaClientes{
+    float:left;
+    padding:0px 0px 20px 0px;
+}
+
+#quemSomos #guardaClientes li{
+    float:left;
+    padding:0px 15px 15px 0px;
+}

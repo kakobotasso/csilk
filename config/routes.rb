@@ -25,6 +25,7 @@ Csilk::Application.routes.draw do
   # INSTITUCIONAL
   get '/quem-somos' => 'welcome#quem_somos', :as => "quem_somos"
   get '/o-que-fazemos' => 'welcome#fazemos', :as => "fazemos"
+  get '/clientes' => 'welcome#clientes', :as => "clientes"
 
   # CATEGORIAS
   get '/produtos/:categoria' => 'categoria#index', :as => "categoria"

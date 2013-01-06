@@ -13,4 +13,7 @@ class WelcomeController < ApplicationController
   def fazemos
   end
 
+  def clientes
+  end
+
 end
