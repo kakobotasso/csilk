@@ -749,3 +749,13 @@ body{
     float:left;
     padding:0px 15px 15px 0px;
 }
+
+#quemSomos .listaFazemos,
+#quemSomos .listaFazemos li{
+    float:left;
+    width:980px;
+}
+
+#quemSomos .listaFazemos{
+    padding:0px 0px 20px 0px;
+}
