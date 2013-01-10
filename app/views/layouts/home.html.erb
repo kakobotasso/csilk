@@ -16,7 +16,7 @@
               <!-- LOGO -->
               <div id="guardaLogo">
                   <h1>
-                  	<%= link_to image_tag("logo.png", :alt => "CSilkBrindes"), "/", :title => "CsilkBrindes" %>
+                  	<%= link_to image_tag("logo2.png", :alt => "CSilkBrindes"), "/", :title => "CsilkBrindes" %>
                   </h1>
               </div>
               <!-- / LOGO -->
@@ -24,11 +24,11 @@
               <!-- REDES SOCIAIS -->
               <div id="redesSociais">
                   <ul>
-                      <li><%= link_to image_tag("logo-facebook.png", :alt => "Facebook"), "javascript:void(0);" %></li>
-                      <li><%= link_to image_tag("logo-twitter.png", :alt => "Twitter"), "javascript:void(0);" %></li>
-                      <li><%= link_to image_tag("logo-linkedin.png", :alt => "LinkedIn"), "javascript:void(0);" %></li>
-                      <li><%= link_to image_tag("logo-flickr.png", :alt => "Flickr"), "javascript:void(0);" %></li>
-                      <li><%= link_to image_tag("logo-youtube.png", :alt => "Youtube"), "javascript:void(0);" %></li>
+                      <li><%= link_to image_tag("logo-facebook.png", :alt => "Facebook"), "http://www.facebook.com/csilk.brindes.7", :target => "_blank" %></li>
+                      <li><%= link_to image_tag("logo-twitter.png", :alt => "Twitter"), "https://twitter.com/csilkbrindes", :target => "_blank" %></li>
+                      <li><%= link_to image_tag("logo-linkedin.png", :alt => "LinkedIn"), "http://www.linkedin.com/profile/view?id=193480752&authType=OUT_OF_NETWORK&authToken=0GX_", :target => "_blank" %></li>
+                      <li><%= link_to image_tag("logo-flickr.png", :alt => "Flickr"), "http://www.flickr.com/people/csilkbrindes/", :target => "_blank" %></li>
+                      <li><%= link_to image_tag("logo-youtube.png", :alt => "Youtube"), "https://www.youtube.com/user/csilkbrindes", :target => "_blank" %></li>
                   </ul>
               </div>
               <!-- / REDES SOCIAIS -->
@@ -83,6 +83,7 @@
                           <li><%= link_to "O que fazemos", fazemos_path %></li>
                           <li><%= link_to "Produtos", categoria_path(categoria_menu) %></li>
                           <li><%= link_to "Clientes", clientes_path %></li>
+                          <li><%= link_to "Sustentabilidade", sustentabilidade_path %></li>
                           <li><%= link_to "Contato", contatos_path %></li>
                           <li><%= link_to "Seja um fornecedor", fornecedores_path %></li>
                       </ul>
