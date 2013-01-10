@@ -16,4 +16,7 @@ class WelcomeController < ApplicationController
   def clientes
   end
 
+  def sustentabilidade
+  end
+
 end
