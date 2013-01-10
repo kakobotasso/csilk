@@ -42,6 +42,7 @@ body{
 #header{
     float:left;
     width:100%;
+    padding:10px 0px 0px 0px;
 }
 
 #header #guardaLogo{
@@ -53,7 +54,16 @@ body{
 }
 
 #header #redesSociais ul{ float:left; }
-#header #redesSociais ul li{ float:left; }
+#header #redesSociais ul li{
+    float:left;
+    padding:0px 0px 0px 10px;
+}
+
+#header #redesSociais ul li img{
+    float:left;
+    width:32px;
+    height:32px;
+}
 
 #header #menu{
     float:left;
@@ -758,4 +768,20 @@ body{
 
 #quemSomos .listaFazemos{
     padding:0px 0px 20px 0px;
+}
+
+#quemSomos #guardaListasFazemosDuplas{
+    float:left;
+    width:980px;
+}
+
+#quemSomos #guardaListasFazemosDuplas .listaFazemosDupla{
+    float:left;
+    width:490px;
+    padding:0px 0px 15px 0px;
+}
+
+#quemSomos #guardaListasFazemosDuplas .listaFazemosDupla li{
+    float:left;
+    width:490px;
 }
