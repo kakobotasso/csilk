@@ -14,8 +14,12 @@
         </tr>
 
         <% @contatos.each do |contato| %>
-            <% if contato == @contatos.last %>
+            <% if contato == @contatos.last && contato.novo? %>
+            <tr class="ultimaTr novoItemContato">
+            <% elsif contato == @contatos.last %>
             <tr class="ultimaTr">
+            <% elsif contato.novo? %>
+            <tr class="novoItemContato">
             <% else %>
             <tr>
             <% end %>

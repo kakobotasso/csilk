@@ -16,6 +16,7 @@ before_filter :authenticate_user!
   # GET /contatos/1.json
   def show
     @contato = Contato.find(params[:id])
+    @contato.update_attributes(:novo => 0 )
 
     respond_to do |format|
       format.html # show.html.erb

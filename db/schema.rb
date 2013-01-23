@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130123223441) do
+ActiveRecord::Schema.define(:version => 20130123231443) do
 
   create_table "banners", :force => true do |t|
     t.string   "nome"
@@ -46,13 +46,14 @@ ActiveRecord::Schema.define(:version => 20130123223441) do
   add_index "contato_produtos", ["produto_id"], :name => "index_contato_produtos_on_produto_id"
 
   create_table "contatos", :force => true do |t|
-    t.string   "nome",       :null => false
-    t.string   "email",      :null => false
-    t.string   "telefone",   :null => false
-    t.string   "assunto",    :null => false
-    t.text     "mensagem",   :null => false
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "nome",                      :null => false
+    t.string   "email",                     :null => false
+    t.string   "telefone",                  :null => false
+    t.string   "assunto",                   :null => false
+    t.text     "mensagem",                  :null => false
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+    t.integer  "novo",       :default => 1
   end
 
   create_table "fornecedores", :force => true do |t|

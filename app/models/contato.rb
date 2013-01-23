@@ -5,4 +5,13 @@ class Contato < ActiveRecord::Base
   validates_presence_of :telefone
   validates_presence_of :assunto
   validates_presence_of :mensagem
+
+  def novo?
+  	if novo == 1
+  		true
+  	else
+  		false
+  	end
+  end
+
 end
