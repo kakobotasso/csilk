@@ -1,25 +1,28 @@
-<% content_for :title do %> <%= "#{@categoria.nome} - CSilkBrindes" %> <% end %>
+<% content_for :title do %> <%= "Produtos - CSilkBrindes" %> <% end %>
 
 <% content_for :bread do %>
   <%= link_to "Ínicio", root_path %> > 
-  <%= @categoria.nome %>
+  Produtos
 <% end %>
 
 <!-- PRODUTOS CATEGORIA -->
 <div id="direitaProdutos">
     <div id="produtosCategoria">
         <ul>
-            <% @produtos.each do |p| %>
-              <li class="<%= cycle("","", "terceira") %>">
-                  <div class="guardaImagemProduto">
-                    <%= link_to image_tag(p.fotos.first.picture.url(:medio), :alt => p.nome ), produto_path(@categoria.slug, p.slug) %>
-                  </div>
-
-                  <a href="<%= produto_path(@categoria.slug, p.slug) %>" class="guardaInfosProduto">
+            <% @categoria.each do |c| %>
+              <p class="tituloCategoria"><%= c.nome %></p>
+              <% c.produtos.last(3).each do |p| %>
+                  <li class="<%= cycle("","", "terceira") %>">
+                    <div class="guardaImagemProduto">
+                      <%= link_to image_tag(p.fotos.first.picture.url(:medio), :alt => p.nome ), produto_path(c.slug, p.slug) %>
+                    </div>
+                    <a href="<%= produto_path(c.slug, p.slug) %>" class="guardaInfosProduto">
                       <span class='nomeProduto'><%= p.nome %></span>
                       <span class='descProduto'> <%= desc(p) %></span>
-                  </a>
-              </li>
+                    </a>
+                  </li>
+              <% end %>
+              <p class="verMaisProdutos"> <%= link_to "Ver mais", categoria_path(c.slug) %> </p>
             <% end %>
         </ul>
     </div>

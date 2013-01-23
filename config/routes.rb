@@ -29,7 +29,8 @@ Csilk::Application.routes.draw do
   get '/sustentabilidade' => 'welcome#sustentabilidade', :as => "sustentabilidade"
 
   # CATEGORIAS
-  get '/produtos/:categoria' => 'categoria#index', :as => "categoria"
+  get '/produtos/' => 'categoria#index', :as => "produtos"
+  get '/produtos/:categoria' => 'categoria#show', :as => "categoria"
   
   # PRODUTOS
   get '/produtos/:categoria/:produto' => 'produtos#index', :as => "produto"

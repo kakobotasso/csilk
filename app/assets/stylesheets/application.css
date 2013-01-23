@@ -465,6 +465,25 @@ body{
     float:left;
 }
 
+#direitaProdutos #produtosCategoria .tituloCategoria{
+    float:left;
+    width:100%;
+    padding:0px 0px 3px 0px;
+    font-size:16px;
+    font-weight:bold;
+    text-indent:10px;
+}
+
+#direitaProdutos #produtosCategoria .verMaisProdutos{
+    float:left;
+    width:100%;
+    text-align:right;
+    padding:0px 0px 10px 0px;
+    display:inline;
+    margin:0px 0px 11px 0px;
+    border-bottom:1px dashed #ccc;
+}
+
 #direitaProdutos #produtosCategoria ul{
     float:left;
     width:635px;
