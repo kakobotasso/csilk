@@ -16,6 +16,7 @@ before_filter :authenticate_user!
   # GET /fornecedores/1.json
   def show
     @fornecedor = Fornecedor.find(params[:id])
+    @fornecedor.update_attributes(:novo => 0 )
 
     respond_to do |format|
       format.html # show.html.erb

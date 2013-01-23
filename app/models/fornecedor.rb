@@ -4,5 +4,14 @@ class Fornecedor < ActiveRecord::Base
   validates_presence_of :nome_contato
   validates_presence_of :telefone
   validates_presence_of :email
-end
+  validates_presence_of :cnpj
 
+  def novo?
+  	if novo == 1
+  		true
+  	else
+  		false
+  	end
+  	
+  end
+end

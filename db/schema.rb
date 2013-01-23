@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120303043835) do
+ActiveRecord::Schema.define(:version => 20130123223441) do
 
   create_table "banners", :force => true do |t|
     t.string   "nome"
@@ -56,19 +56,14 @@ ActiveRecord::Schema.define(:version => 20120303043835) do
   end
 
   create_table "fornecedores", :force => true do |t|
-    t.string   "razao_social",  :null => false
-    t.string   "nome_fantasia"
+    t.string   "razao_social",                :null => false
     t.string   "cnpj"
-    t.string   "nome_contato",  :null => false
-    t.string   "telefone",      :null => false
-    t.string   "celular"
-    t.string   "fax"
-    t.string   "site"
-    t.string   "email",         :null => false
-    t.string   "cidade"
-    t.string   "estado"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.string   "nome_contato",                :null => false
+    t.string   "telefone",                    :null => false
+    t.string   "email",                       :null => false
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
+    t.integer  "novo",         :default => 1
   end
 
   create_table "fotos", :force => true do |t|
