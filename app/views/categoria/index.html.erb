@@ -10,19 +10,21 @@
     <div id="produtosCategoria">
         <ul>
             <% @categoria.each do |c| %>
-              <p class="tituloCategoria"><%= c.nome %></p>
-              <% c.produtos.last(3).each do |p| %>
-                  <li class="<%= cycle("","", "terceira") %>">
-                    <div class="guardaImagemProduto">
-                      <%= link_to image_tag(p.fotos.first.picture.url(:medio), :alt => p.nome ), produto_path(c.slug, p.slug) %>
-                    </div>
-                    <a href="<%= produto_path(c.slug, p.slug) %>" class="guardaInfosProduto">
-                      <span class='nomeProduto'><%= p.nome %></span>
-                      <span class='descProduto'> <%= desc(p) %></span>
-                    </a>
-                  </li>
+              <% if c.produtos.any? %>
+                <p class="tituloCategoria"><%= c.nome %></p>
+                <% c.produtos.last(3).each do |p| %>
+                    <li class="<%= cycle("","", "terceira") %>">
+                      <div class="guardaImagemProduto">
+                        <%= link_to image_tag(p.fotos.first.picture.url(:medio), :alt => p.nome ), produto_path(c.slug, p.slug) %>
+                      </div>
+                      <a href="<%= produto_path(c.slug, p.slug) %>" class="guardaInfosProduto">
+                        <span class='nomeProduto'><%= p.nome %></span>
+                        <span class='descProduto'> <%= desc(p) %></span>
+                      </a>
+                    </li>
+                <% end %>
+                <p class="verMaisProdutos"> <%= link_to "Ver mais", categoria_path(c.slug) %> </p>
               <% end %>
-              <p class="verMaisProdutos"> <%= link_to "Ver mais", categoria_path(c.slug) %> </p>
             <% end %>
         </ul>
     </div>
