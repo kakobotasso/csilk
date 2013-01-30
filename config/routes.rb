@@ -63,6 +63,11 @@ Csilk::Application.routes.draw do
     resources :fotos
     resources :contato_produtos
     resources :cotacoes
+
+    controller :banners do
+      put "banners/:id/desativar", :action => :desativar
+      put "banners/:id/ativar", :action => :ativar
+    end
   end
 
   root :to => 'welcome#index'

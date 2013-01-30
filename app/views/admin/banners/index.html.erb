@@ -5,9 +5,10 @@
 	    <th>Nome</th>
 	    <th>Link</th>
 	    <th>Data publicação</th>
-	    <th style="width:13%;"></th>
-	    <th style="width:13%;"></th>
-	    <th style="width:13%;"></th>
+	    <th>Ativo?</th>
+	    <th style="width:8%;"></th>
+	    <th style="width:8%;"></th>
+	    <th style="width:8%;"></th>
 	  </tr>
 
 	<% @banners.each do |banner| %>
@@ -19,9 +20,15 @@
 	    <td><%= banner.nome %></td>
 	    <td><%= banner.link %></td>
 	    <td><%= banner.data_pub %></td>
-	    <td style="width:13%;"><%= link_to 'Mostrar', [:admin, banner] %></td>
-	    <td style="width:13%;"><%= link_to 'Editar', edit_admin_banner_path(banner) %></td>
-	    <td style="width:13%;"><%= link_to 'Deletar', [:admin, banner], confirm: 'Tem certeza que deseja deletar este banner?', method: :delete, :class => 'deletar' %></td>
+	    <td><%= banner.status_banner %></td>
+	    <td style="width:5%;"><%= link_to 'Mostrar', [:admin, banner] %></td>
+	    <% if banner.ativo == 1 %>
+	    <td style="width:5%;"><%= link_to 'Desativar', "/admin/banners/#{banner.id}/desativar", :method => :put %></td>
+	    <% else %>
+	    <td style="width:5%;"><%= link_to 'Ativar', "/admin/banners/#{banner.id}/ativar", :method => :put %></td>
+	    <% end %>
+	    <td style="width:5%;"><%= link_to 'Editar', edit_admin_banner_path(banner) %></td>
+	    <td style="width:5%;"><%= link_to 'Deletar', [:admin, banner], confirm: 'Tem certeza que deseja deletar este banner?', method: :delete, :class => 'deletar' %></td>
 	  </tr>
 	<% end %>
 	</table>

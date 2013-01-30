@@ -83,4 +83,17 @@ before_filter :authenticate_user!
       format.json { head :no_content }
     end
   end
+
+  def desativar
+    @banner = Banner.find(params[:id])
+    @banner.update_attributes(:ativo => 0 )
+    redirect_to admin_banners_url
+  end
+
+  def ativar
+    @banner = Banner.find(params[:id])
+    @banner.update_attributes(:ativo => 1 )
+    redirect_to admin_banners_url
+  end
+
 end

@@ -11,18 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130124003608) do
+ActiveRecord::Schema.define(:version => 20130130225359) do
 
   create_table "banners", :force => true do |t|
     t.string   "nome"
     t.string   "link"
     t.string   "data_pub"
-    t.datetime "created_at",          :null => false
-    t.datetime "updated_at",          :null => false
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
     t.string   "imagem_file_name"
     t.string   "imagem_content_type"
     t.integer  "imagem_file_size"
     t.datetime "imagem_updated_at"
+    t.integer  "ativo",               :default => 1
   end
 
   create_table "categorias", :force => true do |t|
