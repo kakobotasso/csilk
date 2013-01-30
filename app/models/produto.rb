@@ -1,6 +1,7 @@
 class Produto < ActiveRecord::Base
   belongs_to :categoria
   has_many :fotos
+  has_many :cotacoes
 
   # VALIDACOES
   validates_presence_of :nome

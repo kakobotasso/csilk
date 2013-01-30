@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>CNPJ:</b>
+  <%= @cotacoes.cnpj %>
+</p>
+
+<p>
+  <b>E-mail:</b>
+  <%= @cotacoes.email %>
+</p>
+
+<p>
+  <b>Telefone:</b>
+  <%= @cotacoes.telefone %>
+</p>
+
+<p>
+  <b>Estado:</b>
+  <%= @cotacoes.nome_estado %>
+</p>
+
+<p>
+  <b>Forma de contato:</b>
+  <%= @cotacoes.tipo_contato %>
+</p>
+
+<p>
+  <b>Produto:</b>
+  <%= @cotacoes.produto.nome %>
+</p>
+
+<%= link_to 'Voltar', admin_cotacoes_path %>

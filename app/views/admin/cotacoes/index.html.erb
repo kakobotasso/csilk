@@ -1,0 +1,40 @@
+<h1>Lista de contatos</h1>
+
+<div id="guardaListagens">
+    <table>
+        <tr id="firstTr">
+            <th>CNPJ</th>
+            <th>E-mail</th>
+            <th>Telefone</th>
+            <th>Produto</th>
+            <!-- <th>Mensagem</th> -->
+            <th style="width:17%;"></th>
+            <th style="width:17%;"></th>
+            <th style="width:16%;"></th>
+        </tr>
+
+        <% @cotacoes.each do |cotacao| %>
+            <% if cotacao == @cotacoes.last && cotacao.novo? %>
+            <tr class="ultimaTr novoItemContato">
+            <% elsif cotacao == @cotacoes.last %>
+            <tr class="ultimaTr">
+            <% elsif cotacao.novo? %>
+            <tr class="novoItemContato">
+            <% else %>
+            <tr>
+            <% end %>
+                <td><%= cotacao.cnpj %></td>
+                <td><%= cotacao.email %></td>
+                <td><%= cotacao.telefone %></td>
+                <td><%= cotacao.produto.nome %></td>
+                <!-- <td><%#= contato.mensagem %></td> -->
+                <td style="width:10%;"><%= link_to 'Mostrar', [:admin, cotacao] %></td>
+                <td style="width:10%;"><%= link_to 'Deletar', [:admin, cotacao], confirm: 'Tem certeza que deseja excluir esta cotacao?', method: :delete, :class => 'deletar' %></td>
+            </tr>
+        <% end %>
+    </table>
+
+    <br />
+
+    <%#= link_to 'Novo Contato', new_admin_contato_path, :id => 'novoItem' %>
+</div>

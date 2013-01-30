@@ -1,0 +1,70 @@
+<%= content_for :title do %>
+	Cotação - CSilkBrindes
+<% end %>
+
+<% flash.each do |type, message| %>
+	<script type="text/javascript">
+		alert("<%= message %>");
+	</script>
+<% end %>
+
+<!-- CONTATO -->
+<div id="quemSomos">
+	<h1>Cotação</h1>
+
+	<p>Faça uma cotação com a CSilk Brindes</p>
+
+	<%= form_for @cotacao do |f| %>
+		<ul>
+			<li>
+				<label>
+					<span>CNPJ:</span><br/>
+					<%= f.text_field :cnpj, :class => "text" %>
+				</label>
+			</li>
+
+			<li>
+				<label>
+					<span>Estado:</span><br/>
+					<%= f.select :estado, Estados::ESTADO, { :prompt => 'Selecione um estado' } %>
+				</label>
+			</li>
+
+			<li>
+				<label>
+					<span>E-mail:</span><br/>
+					<%= f.text_field :email, :class => "text" %>
+				</label>
+			</li>
+
+			<li>
+				<label>
+					<span>Telefone:</span><br/>
+					<%= f.text_field :telefone, :class => "text" %>
+				</label>
+			</li>
+
+			<li>
+				<label>
+					<span>Forma de contato:</span><br/>
+					<%= f.select :forma_contato, opt_forma_contato, :prompt => "Escolha uma forma de contato" %>
+				</label>
+			</li>
+
+			<li>
+				<label>
+					<span>Produto:</span><br/>
+					<select name="cotacao[produto_id]">
+						<option value="">Selecione um produto</option>
+						<%= option_groups_from_collection_for_select(@categorias, :produtos, "nome", "id", "nome") %>
+					</select>
+				</label>
+			</li>
+
+			<li>
+				<%= f.submit 'Enviar' %>
+			</li>
+		</ul>
+	<% end %>
+</div>
+<!-- / CONTATO -->

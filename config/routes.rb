@@ -41,6 +41,10 @@ Csilk::Application.routes.draw do
   get '/contato' => 'contato#new', :as => "contatos"
   post '/contato' => 'contato#create'
 
+  # CONTATO
+  get '/cotacao' => 'cotacao#new', :as => "cotacoes"
+  post '/cotacao' => 'cotacao#create'
+
   # SEJA UM FORNECEDOR
   get '/seja-um-fornecedor' => 'fornecedor#new', :as => "fornecedores"
   post '/seja-um-fornecedor' => 'fornecedor#create'
@@ -58,6 +62,7 @@ Csilk::Application.routes.draw do
     resources :produtos
     resources :fotos
     resources :contato_produtos
+    resources :cotacoes
   end
 
   root :to => 'welcome#index'
