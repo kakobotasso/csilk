@@ -67,7 +67,7 @@
                   	<% categorias.each do |c| %>
                       <% if c.produtos.size > 0 %>
                     	<li id="<%= c.slug %>">
-                    		<%= link_to c.nome, categoria_path(c.slug) %>
+                    		<%= link_to c.nome+" (#{c.produtos.size})", categoria_path(c.slug) %>
                     		<ul>
                     		  <% c.produtos.each do |p| %>
                     		  <li><%= link_to p.nome, produto_path(c.slug, p.slug), :id => p.slug %></li>
