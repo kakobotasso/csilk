@@ -8,7 +8,7 @@ class Cotacao < ActiveRecord::Base
   end
 
   def tipo_contato
-  	if forma_contato
+  	if forma_contato == 0
   		"Telefone"
   	else
   		"E-mail"
