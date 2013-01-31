@@ -33,6 +33,16 @@ jQuery.fn.resetDefaultValue = function() {
 
 
 $(function(){
+    /* MENU */
+    $("#header #menu ul li").hover(function(){
+        $(this).find("div").slideDown(500);
+        $(this).find("a:eq(0)").addClass("marcado");
+    },function(){
+        $(this).find("div").slideUp(500);
+        $(this).find("a:eq(0)").removeClass("marcado");
+    });
+    /* / MENU */
+
     /* SLIDER HOME */
     var _html = "<ul>";
     for(var i = 0; i < $("#banners a").length; i++ ){

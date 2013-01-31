@@ -80,7 +80,9 @@ body{
 }
 #header #menu ul li{
     float:left;
-    padding:4px 8px 0px 0px;
+    padding:0px 8px 0px 0px;
+    position:relative;
+    z-index:2;
 }
 
 #header #menu ul li.ultimaLiTopo{ padding-right:0px; }
@@ -88,14 +90,60 @@ body{
 #header #menu ul li a{
     float:left;
     width:161px;
-    height:46px;
-    background:url('menu-superior.png') no-repeat 0px 0px;
+    padding:18px 0px 19px 0px;
+    text-decoration:none;
+    font-size:20px;
+    text-align: center;
+    font-weight:bold;
+    color:#fff;
 }
-#header #menu ul li a#quem-somos{ background-position:0px 0px; }
+
+#header #menu ul li a.marcado,
+#header #menu ul li a:hover{
+    background:url('bg-barra-menu-invertida.gif') repeat-x 0px 0px;
+}
+
+#header #menu ul li .submenu{
+    float:left;
+    width:171px;
+    position:absolute;
+    top:45px;
+    left:-5px;
+    padding:10px 0px 0px 0px;
+    background:#C39A18;
+    display:none;
+}
+
+#header #menu ul li .submenu ul{
+    float:left;
+    width:161px;
+    padding:10px 5px 10px 5px;
+}
+
+#header #menu ul li .submenu ul li{
+    float:left;
+    width:161px;
+}
+
+#header #menu ul li .submenu ul li a{
+    float:left;
+    width:151px;
+    font-size:14px;
+    font-weight: normal;
+    text-align:left;
+    padding:5px 5px 5px 5px;
+}
+
+#header #menu ul li .submenu ul li a:hover{
+    color:#C39A18;
+    background:#FBE6AA;
+}
+
+/*#header #menu ul li a#quem-somos{ background-position:0px 0px; }
 #header #menu ul li a#o-que-fazemos{ background-position:-169px 0px; }
 #header #menu ul li a#produtos{ background-position:-337px 0px; }
 #header #menu ul li a#clientes{ background-position:-502px 0px; }
-#header #menu ul li a#contato{ background-position:-669px 0px; }
+#header #menu ul li a#contato{ background-position:-669px 0px; }*/
 /* CONTEUDO */
 #content{
     float:left;

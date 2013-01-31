@@ -38,11 +38,34 @@
           <div id="menu">
               <div id="contentMenu">
                   <ul>
-                      <li><%= link_to "", quem_somos_path, :id => "quem-somos", :title => "Quem Somos"%></li>
-                      <li><%= link_to "", fazemos_path, :id => "o-que-fazemos", :title => "O que fazemos"%></li>
-                      <li><%= link_to "", produtos_path, :id => "produtos", :title => "Produtos"%></li>
-                      <li><%= link_to "", clientes_path, :id => "clientes", :title => "Clientes"%></li>
-                      <li class="ultimaLiTopo"><%= link_to "", contatos_path, :id => "contato", :title => "Contato"%></li>
+                      <li><%= link_to "Home", "/", :title => "Home"%></li>
+                      <li>
+                        <%= link_to "Institucional", "javascript:void(0);", :title => "Institucional"%>
+                        <div class="submenu">
+                          <ul>
+                            <li><%= link_to "Quem somos", quem_somos_path %></li>
+                            <li><%= link_to "O que fazemos", fazemos_path %></li>
+                            <li><%= link_to "Sustentabilidade", sustentabilidade_path %></li>
+                          </ul>
+                        </div>
+                      </li>
+
+                      <li>
+                        <%= link_to "Produtos", produtos_path, :title => "Produtos"%>
+                      </li>
+                      
+                      <li><%= link_to "Clientes", clientes_path, :title => "Clientes"%></li>
+                      
+                      <li class="ultimaLiTopo">
+                        <%= link_to "Contato", contatos_path, :title => "Contato"%>
+                        <div class="submenu">
+                          <ul>
+                            <li><%= link_to "Fale Conosco", contatos_path %></li>
+                            <li><%= link_to "Seja um fornecedor", fornecedores_path %></li>
+                            <li><%= link_to "Cotação", cotacoes_path %></li>
+                          </ul>
+                        </div>
+                      </li>
                   </ul>
               </div>
           </div>
