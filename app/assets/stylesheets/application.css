@@ -564,7 +564,7 @@ body{
     width:182px;
     height:138px;
     overflow:hidden;
-    background:#fff;
+    text-align: center;
 }
 
 #direitaProdutos #produtosCategoria ul li .guardaInfosProduto{
@@ -620,7 +620,7 @@ body{
     float:left;
     width:315px;
     height:315px;
-    background:#868688;
+    text-align:center;
 }
 
 #direitaProdutos #guardaDetalheProduto #guardaFotosProduto #guardaMiniaturas{
