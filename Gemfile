@@ -1,6 +1,6 @@
-source 'https://rubygems.org'
+source :rubygems
 
-gem 'rails', '3.2.11'
+gem 'rails'
 gem 'mysql2'
 gem 'jquery-rails'
 gem 'devise'
