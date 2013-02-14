@@ -99,23 +99,20 @@
       <div id="footer">
           <div class="wrapper">
               <div id="contentRodape">
-                  <div id="esquerdaRodape">
-                  	<%= link_to image_tag("logo-rodape.png", :alt => "CsilkBrindes"), "/" %>
-                      
-                      <ul>
-                          <li><%= link_to "Quem somos", quem_somos_path %></li>
-                          <li><%= link_to "O que fazemos", fazemos_path %></li>
-                          <li><%= link_to "Sustentabilidade", sustentabilidade_path %></li>
-                          <li><%= link_to "Produtos", produtos_path %></li>
-                          <li><%= link_to "Clientes", clientes_path %></li>
-                          <li><%= link_to "Contato", contatos_path %></li>
-                          <li><%= link_to "Seja um fornecedor", fornecedores_path %></li>
-                          <li><%= link_to "Cotação", cotacoes_path %></li>
-                      </ul>
-                  </div>
+                	<%= link_to image_tag("logo2.png", :alt => "CSilkBrindes", :style => "width:355px;"), "/", :title => "CSilkBrindes", :id => "linkRodape" %>
+                    
+                  <ul id="guardaMenuInstitucional">
+                      <li><%= link_to "Quem somos", quem_somos_path %></li>
+                      <li><%= link_to "O que fazemos", fazemos_path %></li>
+                      <li><%= link_to "Sustentabilidade", sustentabilidade_path %></li>
+                      <li><%= link_to "Produtos", produtos_path %></li>
+                      <li><%= link_to "Clientes", clientes_path %></li>
+                      <li><%= link_to "Contato", contatos_path %></li>
+                      <li><%= link_to "Seja um fornecedor", fornecedores_path %></li>
+                      <li class="ultimoItemMenuInstitucional"><%= link_to "Cotação", cotacoes_path %></li>
+                  </ul>
                   
                   <div id="categoriasRodape">
-                      <p>Categorias</p>
                       <ul>
                       	<% categorias.each do |c| %>
                           <% if c.produtos.size > 0 %>

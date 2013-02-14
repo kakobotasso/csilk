@@ -390,16 +390,17 @@ body{
 #footer{
     float:left;
     width:100%;
-    height:228px;
     display:inline;
     margin:10px 0px 0px 0px;
-    background:url("pixel-rodape.gif") repeat-x 0px 0px;
+    padding:20px 0px 20px 0px;
+    background:#E4C000;
 }
  
 #footer #direitosReservados{
     float:left;
     width:100%;
     text-align:center;
+    padding:20px 0px 0px 0px;
 }
  
 #footer #contentRodape{
@@ -407,33 +408,36 @@ body{
     width:100%;
 }
 
-#footer #contentRodape #esquerdaRodape{
+#footer #contentRodape #linkRodape{
     float:left;
-    width:150px;
-    padding:15px 0px 0px 50px;
+    display:inline-block;
+    margin:0px 0px 0px 310px;
 }
 
-#footer #contentRodape #esquerdaRodape a{
+#footer #contentRodape #guardaMenuInstitucional a{
     float:left;
     text-decoration:none;
     color:#000;
 }
 
-#footer #contentRodape #esquerdaRodape ul{
+#footer #contentRodape #guardaMenuInstitucional{
     float:left;
-    width:100%;
-    padding:10px 0px 0px 0px;
+    padding:15px 0px 20px 130px;
 }
 
-#footer #contentRodape #esquerdaRodape ul li{
+#footer #contentRodape #guardaMenuInstitucional li{
     float:left;
-    width:100%;
+    padding:0px 10px;
+    border-right:1px solid #000;
+}
+
+#footer #contentRodape #guardaMenuInstitucional li.ultimoItemMenuInstitucional{
+    border-right:0px;
 }
 
 #footer #contentRodape #categoriasRodape{
-    float:left;
-    width:695px;
-    padding:30px 0px 0px 5px;
+    width:700px;
+    margin:0px auto;
 }
 
 #footer #contentRodape #categoriasRodape ul{
@@ -443,7 +447,19 @@ body{
 
 #footer #contentRodape #categoriasRodape ul li{
     float:left;
-    width:25%;
+    width:20%;
+}
+
+#footer #contentRodape #categoriasRodape ul li a{
+    float:left;
+    padding:0px 0px 0px 5px;
+    color:#000;
+}
+
+
+#footer #contentRodape #categoriasRodape ul li a:hover{
+    color:#333;
+    text-decoration:underline;
 }
 
 /* CATEGORIA */
