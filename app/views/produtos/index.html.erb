@@ -26,6 +26,7 @@
           	<img src="" alt="" />
           </div>
           
+          <% if @produto.fotos.any? %>
           <div id="guardaMiniaturas">
               <div class="preSeta" id="preSetaEsq"><a href="javascript:void(0);" class="setas" id="setaEsq"></a></div>
               <div class="preSeta" id="preSetaDir"><a href="javascript:void(0);" class="setas" id="setaDir"></a></div>
@@ -39,6 +40,7 @@
                   </ul>
               </div>
           </div>
+          <% end %>
       </div>
       <!-- / FOTOS -->
       

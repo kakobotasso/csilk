@@ -12,7 +12,9 @@
             <% @produtos.each do |p| %>
               <li class="<%= cycle("","", "terceira") %>">
                   <div class="guardaImagemProduto">
+                    <% if p.fotos.any? %>
                     <%= link_to image_tag(p.fotos.first.picture.url(:medio), :alt => p.nome ), produto_path(@categoria.slug, p.slug) %>
+                    <% end %>
                   </div>
 
                   <a href="<%= produto_path(@categoria.slug, p.slug) %>" class="guardaInfosProduto">

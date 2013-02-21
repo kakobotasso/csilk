@@ -28,7 +28,9 @@
               <% two_products.each do |product| %>
                 <div class="sliderProdutoDestaque">
                     <div class="guardaImagem">
+                      <% if product.fotos.any? %>
                       <%= link_to image_tag(product.fotos.first.picture.url(:medio), :alt => product.nome), produto_path(product.categoria.slug, product.slug) %>
+                      <% end %>
                     </div>
                     <div class="nomeProduto">
                         <p><%= link_to product.nome, produto_path(product.categoria.slug, product.slug) %></p>
@@ -64,7 +66,9 @@
               <li>
                   <div class="sliderProdutoVendidos">
                       <div class="guardaImagem">
+                        <% if acessados.fotos.any? %>
                         <%= link_to image_tag(acessados.fotos.first.picture.url(:medio), :alt => acessados.nome), produto_path(acessados.categoria.slug, acessados.slug) %>
+                        <% end %>
                       </div>
                       <div class="nomeProduto">
                           <p><%= link_to acessados.nome, produto_path(acessados.categoria.slug, acessados.slug) %></p>
