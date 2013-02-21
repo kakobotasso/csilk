@@ -1,5 +1,7 @@
 Csilk::Application.routes.draw do
 
+  mount Ckeditor::Engine => '/ckeditor'
+
   get "welcome/index"
 
   scope '/admin' do

@@ -1,6 +1,6 @@
 //= require jquery
 //= require jquery_ujs
-//= require_directory ./ckeditor
+//= require ckeditor/init
 
 $(function(){
   /* FAZ SLUG */

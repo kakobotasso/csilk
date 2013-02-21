@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <%= f.label :descricao %><br />
-    <%= f.text_area :descricao, :id => "editor1" %>
+    <%= f.cktext_area :descricao, :ckeditor => {:toolbar => "Basic"} %>
   </div>
   <div class="field">
     <%= f.label :categoria %><br />
@@ -40,8 +40,4 @@
   <div class="actions">
     <%= f.submit %>
   </div>
-<% end %>
-
-<%= content_for :js do %>
-	CKEDITOR.replace( 'editor1', { toolbar: 'Basic' } );
 <% end %>
