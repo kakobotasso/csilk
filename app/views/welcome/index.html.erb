@@ -18,8 +18,6 @@
 <div id="guardaProdutosDestaques">
   <p class="tituloDestaque">Produtos em destaque</p>
   <div id="geralProdutosDestaques">
-  		<%= link_to image_tag("seta-esquerda-destaques.png", :alt => "Anterior"), "javascript:void(0);", :class => "setas", :id => "setaEsquerda" %>
-  		<%= link_to image_tag("seta-direita-destaques.png", :alt => "Próximo"), "javascript:void(0);", :class => "setas", :id => "setaDireita" %>
       
       <div id="produtosDestaque">
         <ul>
@@ -45,11 +43,6 @@
         </ul>
       </div>
       
-      <!-- PAGINACAO -->
-      <div class="guardaPaginacaoSlider">
-        <a href="javascript:void(0);" class="marcado"></a>
-      </div>
-      <!-- / PAGINACAO -->
   </div>
 </div>
 <!-- / PRODUTOS EM DESTAQUE -->
@@ -58,8 +51,6 @@
 <div id="guardaProdutosVendidos">
   <p class="tituloDestaque">Mais acessados</p>
   <div id="geralProdutosVendidos">
-  	<%= link_to image_tag("seta-esquerda-destaques.png", :alt => "Anterior"), "javascript:void(0);", :class => "setas", :id => "setaEsquerdaVendidos" %>
-  		<%= link_to image_tag("seta-direita-destaques.png", :alt => "Próximo"), "javascript:void(0);", :class => "setas", :id => "setaDireitaVendidos" %>
       <div id="produtosVendidos">
           <ul>
               <% @produtos_acessados.each do |acessados| %>
@@ -84,90 +75,3 @@
   </div>
 </div>
 <!-- / PRODUTOS MAIS VENDIDOS -->
-
-<script type="text/javascript">
-  $(function(){
-    var _liDestaque = $("#produtosDestaque ul li").length;
-    var _liVendidos = $("#produtosVendidos ul li").length;
-    
-    var _liWidthDestaque = 252;
-    var _liWidthVendidos = 252;
-    
-    var _ulTotalDestaque = _liDestaque * _liWidthDestaque;
-    var _ulTotalVendidos = _liVendidos * _liWidthDestaque;
-    
-    var _leftDestaque = 0;
-    var _leftVendidos = 0;
-    
-    var _paginacao = "<a href='javascript:void(0);'></a>";
-    var _paginas = 0;
-    
-    $("#produtosDestaque ul").css("width", _ulTotalDestaque);
-    $("#produtosVendidos ul").css("width", _ulTotalVendidos);
-
-    document.getElementById('setaEsquerda').direcao = 1;
-    document.getElementById('setaDireita').direcao = -1;
-    
-    document.getElementById('setaEsquerdaVendidos').direcao = 1;
-    document.getElementById('setaDireitaVendidos').direcao = -1;
-
-    function validaSetasDestaque(){
-      if( _liDestaque <= 3 ){
-        $('#setaEsquerda').hide();
-        $('#setaDireita').hide();
-      }else if( _leftDestaque == 0 ){
-        $('#setaEsquerda').hide();
-        $('#setaDireita').show();
-      }else if(_leftDestaque <= -(_ulTotalDestaque-(3*_liWidthDestaque)) ){
-        $('#setaEsquerda').show();
-        $('#setaDireita').hide();
-      }else{
-        $('#setaEsquerda').show();
-        $('#setaDireita').show();
-      }
-    }
-    validaSetasDestaque();
-
-    function validaSetasDestaqueVendidos(){
-      if( _liVendidos <= 3 ){
-        $('#setaEsquerdaVendidos').hide();
-        $('#setaDireitaVendidos').hide();
-      }else if( _leftVendidos == 0 ){
-        $('#setaEsquerdaVendidos').hide();
-        $('#setaDireitaVendidos').show();
-      }else if(_leftVendidos <= -(_ulTotalVendidos-(3*_liWidthVendidos)) ){
-        $('#setaEsquerdaVendidos').show();
-        $('#setaDireitaVendidos').hide();
-      }else{
-        $('#setaEsquerdaVendidos').show();
-        $('#setaDireitaVendidos').show();
-      }
-    }
-    validaSetasDestaqueVendidos();
-
-    /* PAGINACAO */
-    if( _liDestaque%3 == 1 ){
-      _paginas = (_liDestaque/3)+1;
-    }else{
-      _paginas = (_liDestaque/3);
-    }
-
-    for(var i = 1; i < _paginas; i++){
-      $(".guardaPaginacaoSlider").eq(0).append(_paginacao);
-    }
-    /* / PAGINACAO */
-
-    $("#geralProdutosDestaques .setas").click(function(){
-      _leftDestaque += this.direcao * _liWidthDestaque;
-      $("#produtosDestaque ul").animate({left: _leftDestaque}, 500);
-      validaSetasDestaque();
-    });
-
-    $("#geralProdutosVendidos .setas").click(function(){
-      _leftVendidos += this.direcao * _liWidthVendidos;
-      $("#produtosVendidos ul").animate({left: _leftVendidos}, 500);
-      validaSetasDestaqueVendidos();
-    });
-
-  });
-</script>

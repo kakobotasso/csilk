@@ -230,51 +230,23 @@ body{
 #content #guardaProdutosDestaques #geralProdutosDestaques{
     float:left;
     width:927px;
-    height:326px;
-    background:url('bg-destaques-maior.gif') no-repeat 0px 0px;
     position: relative;
 }
-
-#content #guardaProdutosVendidos #geralProdutosVendidos{
-    height:142px;
-    background:url('bg-destaques-menor.gif') no-repeat 0px 0px;
-}
-
-#content #guardaProdutosVendidos #geralProdutosVendidos a.setas,
-#content #guardaProdutosDestaques #geralProdutosDestaques a.setas{
-    float:left;
-    position:absolute;
-    top:93px;
-}
-
-#content #guardaProdutosVendidos #geralProdutosVendidos a.setas{ top:53px; }
-
-#content #guardaProdutosVendidos #geralProdutosVendidos a#setaEsquerdaVendidos,
-#content #guardaProdutosDestaques #geralProdutosDestaques a#setaEsquerda{ left:20px }
-
-#content #guardaProdutosVendidos #geralProdutosVendidos a#setaDireitaVendidos,
-#content #guardaProdutosDestaques #geralProdutosDestaques a#setaDireita{ right:20px; }
 
 #content #guardaProdutosVendidos #geralProdutosVendidos #produtosVendidos,
 #content #guardaProdutosDestaques #geralProdutosDestaques #produtosDestaque{
     float:left;
     width:741px;
-    height:225px;
     padding:25px 0px 0px 0px;
-    overflow:hidden;
     position:relative;
     display:inline;
     margin:0px 0px 0px 90px;
 }
 
-#content #guardaProdutosVendidos #geralProdutosVendidos #produtosVendidos{ height:116px; }
-
 #content #guardaProdutosVendidos #geralProdutosVendidos #produtosVendidos ul,
 #content #guardaProdutosDestaques #geralProdutosDestaques #produtosDestaque ul{
     float:left;
     width:760px;
-    position:relative;
-    left:0px;
 }
 #content #guardaProdutosVendidos #geralProdutosVendidos #produtosVendidos ul li,
 #content #guardaProdutosDestaques #geralProdutosDestaques #produtosDestaque ul li{
