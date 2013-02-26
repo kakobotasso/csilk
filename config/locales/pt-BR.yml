@@ -208,3 +208,4 @@ pt-BR:
   will_paginate:
     previous_label: "Anterior"
     next_label: "Próximo"
+    page_gap: "..."
