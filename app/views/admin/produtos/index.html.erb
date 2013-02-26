@@ -34,6 +34,8 @@
         <% end %>
     </table>
 
+    <%= will_paginate @produtos %>
+
     <br />
 
     <%= link_to 'Novo Produto', new_admin_produto_path, :id => 'novoItem' %>

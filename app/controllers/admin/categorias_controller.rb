@@ -5,7 +5,7 @@ before_filter :authenticate_user!
   # GET /categorias
   # GET /categorias.json
   def index
-    @categorias = Categoria.all.sort! { |a,b| b.id <=> a.id }
+    @categorias = Categoria.order('id DESC').paginate(:page => params[:page], :per_page => 20)
 
     respond_to do |format|
       format.html # index.html.erb

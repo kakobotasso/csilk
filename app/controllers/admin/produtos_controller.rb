@@ -5,7 +5,7 @@ before_filter :authenticate_user!
   # GET /produtos
   # GET /produtos.json
   def index
-    @produtos = Produto.all.sort! { |a,b| b.id <=> a.id }
+    @produtos = Produto.order('id DESC').paginate(:page => params[:page], :per_page => 20)
 
     respond_to do |format|
       format.html # index.html.erb
