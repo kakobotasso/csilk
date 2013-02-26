@@ -205,3 +205,6 @@ pt-BR:
   activerecord:
     errors:
       <<: *errors
+  will_paginate:
+    previous_label: "Anterior"
+    next_label: "Próximo"
