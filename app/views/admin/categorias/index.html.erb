@@ -15,7 +15,7 @@
 	<% else %>
 		<tr>
 	<% end %>
-    <td><%= categoria.nome %></td>
+    <td><%= "#{categoria.nome} (#{categoria.produtos.count})" %></td>
     <td><%= categoria.slug %></td>
     <td><%= link_to 'Mostrar', [:admin, categoria] %></td>
     <td><%= link_to 'Editar', edit_admin_categoria_path(categoria) %></td>
