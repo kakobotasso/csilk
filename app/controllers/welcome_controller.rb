@@ -19,4 +19,7 @@ class WelcomeController < ApplicationController
   def sustentabilidade
   end
 
+  def social
+  end
+
 end

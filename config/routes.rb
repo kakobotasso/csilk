@@ -29,6 +29,7 @@ Csilk::Application.routes.draw do
   get '/o-que-fazemos' => 'welcome#fazemos', :as => "fazemos"
   get '/clientes' => 'welcome#clientes', :as => "clientes"
   get '/sustentabilidade' => 'welcome#sustentabilidade', :as => "sustentabilidade"
+  get '/projeto-social' => 'welcome#social', :as => "social"
 
   # CATEGORIAS
   get '/produtos/' => 'categoria#index', :as => "produtos"
