@@ -21,9 +21,8 @@
       
       <div id="produtosDestaque">
         <ul>
-          <% @produtos.each_slice(2) do |two_products| %>
+          <% @produtos.each do |product| %>
             <li>
-              <% two_products.each do |product| %>
                 <div class="sliderProdutoDestaque">
                     <div class="guardaImagem">
                       <% if product.fotos.any? %>
@@ -37,7 +36,6 @@
                       <%= link_to image_tag("bt-saibia-mais.gif", :alt => "Saiba Mais"), produto_path(product.categoria.slug, product.slug) %>
                     </div>
                 </div>
-              <% end %>
             </li>
           <% end %>
         </ul>

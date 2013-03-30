@@ -3,8 +3,8 @@ class WelcomeController < ApplicationController
 
   def index
   	@banners = Banner.all
-  	@produtos = Produto.limit(18).sort! { |a,b| b.id <=> a.id }
-  	@produtos_acessados = Produto.limit(9).sort! { |a,b| b.nvisitas <=> a.nvisitas }
+  	@produtos = Produto.order("id DESC").limit(18)
+  	@produtos_acessados = Produto.order("nvisitas DESC").limit(9)
   end
 
   def quem_somos
