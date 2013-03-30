@@ -1,6 +1,0 @@
-<h1>Editing banner</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Mostrar', [:admin, @banner] %> |
-<%= link_to 'Voltar', admin_banners_path %>

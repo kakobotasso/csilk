@@ -1,6 +1,0 @@
-<h1>Editar contato</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Mostrar', [:admin, @contato] %> |
-<%= link_to 'Back', admin_contatos_path %>

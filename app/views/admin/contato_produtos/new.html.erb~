@@ -1,5 +1,0 @@
-<h1>Novo contato_produto</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Voltar', contato_produtos_path %>

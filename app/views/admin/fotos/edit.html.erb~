@@ -1,7 +1,0 @@
-<h1>Editar foto</h1>
-<%= image_tag @foto.picture.url(:medio)%>
-<%= render 'form' %>
-
-
-<% link_to 'Mostrar', [:admin, @foto] %>
-<%= link_to 'Voltar', [:admin, @produto] %>
