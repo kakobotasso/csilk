@@ -19,6 +19,7 @@
     <% if user_signed_in? %>
       <div id="menuAdmin">
         <ul>
+          <li><%= link_to "Home", "/admin" %></li>
           <li><%= link_to "Produtos", admin_produtos_path %></li>
           <li><%= link_to "Banners", admin_banners_path %></li>
           <li><%= link_to "Categorias", admin_categorias_path %></li>

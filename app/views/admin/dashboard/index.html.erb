@@ -74,7 +74,7 @@
 		<% if @cotacoes.any? %>
 		<ul>
 			<% @cotacoes.each do |cotacao| %>
-			<li> <%= link_to "#{cotacao.nome}", [:admin, cotacao] %> </li>
+			<li> <%= link_to "#{cotacao.email}", [:admin, cotacao] %> </li>
 			<% end %>
 		</ul>
 		<% else %>
