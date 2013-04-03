@@ -1,0 +1,84 @@
+<style type="text/css">
+	.blocoDashboard{
+		float:left;
+		padding:10px 0px 10px 10px;
+		width:440px;
+		min-height:135px;
+		border:1px solid #ccc;
+		margin:5px 5px 5px 5px;
+	}
+	.blocoDashboard h2{
+		float:left;
+		width:100%;
+		padding:0px 0px 5px 0px;
+	}
+</style>
+
+<h1>Olá, seja bem vindo</h1>
+
+<div id="guardaBlocos">
+	<div class="blocoDashboard noBorder" id="guardaBlocoProdutos">
+		<h2>Últimos produtos:</h2>
+		<% if @produtos.any? %>
+		<ul>
+			<% @produtos.each do |produto| %>
+			<li> <%= link_to "#{produto.nome} - #{produto.categoria.nome}", [:admin, produto] %> </li>
+			<% end %>
+		</ul>
+		<% else %>
+		<h3>Nenhum produto cadastrado!</h3>
+		<% end %>
+	</div>
+
+	<div class="blocoDashboard" id="guardaBlocoFaleConosco">
+		<h2>Últimos contatos <small>(fale conosco)</small>:</h2>
+		<% if @fale_conosco.any? %>
+		<ul>
+			<% @fale_conosco.each do |contato| %>
+			<li> <%= link_to "#{contato.nome}", [:admin, contato] %> </li>
+			<% end %>
+		</ul>
+		<% else %>
+		<h3>Ninguém entrou em contato :(</h3>
+		<% end %>
+	</div>
+	
+	<div class="blocoDashboard noBorder" id="guardaBlocoContatoProduto">
+		<h2>Últimos contatos <small>(produtos)</small>:</h2>
+		<% if @contato_produtos.any? %>
+		<ul>
+			<% @contato_produtos.each do |contato_produto| %>
+			<li> <%= link_to "#{contato_produto.nome}", [:admin, contato_produto] %> </li>
+			<% end %>
+		</ul>
+		<% else %>
+		<h3>Ninguém entrou em contato :(</h3>
+		<% end %>
+	</div>
+	
+	<div class="blocoDashboard" id="guardaBlocoFornecedores">
+		<h2>Últimos contatos <small>(fornecedores)</small>:</h2>
+		<% if @fornecedores.any? %>
+		<ul>
+			<% @fornecedores.each do |fornecedor| %>
+			<li> <%= link_to "#{fornecedor.nome}", [:admin, fornecedor] %> </li>
+			<% end %>
+		</ul>
+		<% else %>
+		<h3>Ninguém entrou em contato :(</h3>
+		<% end %>
+	</div>
+	
+	<div class="blocoDashboard noBorder" id="guardaBlocoCotacoes">
+		<h2>Últimos contatos <small>(cotações)</small>:</h2>
+		<% if @cotacoes.any? %>
+		<ul>
+			<% @cotacoes.each do |cotacao| %>
+			<li> <%= link_to "#{cotacao.nome}", [:admin, cotacao] %> </li>
+			<% end %>
+		</ul>
+		<% else %>
+		<h3>Ninguém entrou em contato :(</h3>
+		<% end %>
+	</div>
+</div>

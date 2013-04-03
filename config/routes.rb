@@ -5,7 +5,7 @@ Csilk::Application.routes.draw do
   get "welcome/index"
 
   scope '/admin' do
-    root :to => 'admin/produtos#index'
+    root :to => 'admin/dashboard#index'
     #devise_for :users, :as => :admin#, :controllers => { :sessions => 'admin/sessions', :passwords => 'admin/passwords' }
     devise_for :users, :path_names => {
       :sign_in => '',
