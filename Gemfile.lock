@@ -169,6 +169,8 @@ GEM
       multi_json (~> 1.0)
       simplecov-html (~> 0.7.1)
     simplecov-html (0.7.1)
+    sitemap_generator (3.4)
+      builder
     slop (3.4.4)
     sprockets (2.2.2)
       hike (~> 1.2)
@@ -217,6 +219,7 @@ DEPENDENCIES
   rspec-rails
   sass-rails (~> 3.2.3)
   simplecov
+  sitemap_generator
   therubyracer
   uglifier (>= 1.0.3)
   will_paginate

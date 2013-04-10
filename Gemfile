@@ -10,6 +10,7 @@ gem "journey"
 
 gem "nokogiri"
 gem "htmlentities"
+gem "sitemap_generator"
 
 gem "ckeditor"
 
